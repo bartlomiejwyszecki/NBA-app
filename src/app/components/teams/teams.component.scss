@@ -48,10 +48,25 @@ h2 {
                 }
                 .description {
                     height: 100%;
-                    @include flex;
+                    display: flex;
+                    flex-direction: column;
                     padding-left: 30px;
-                    h4 {
-                        font-size: 1em;
+                    .name {
+                        width: 100%;
+                        margin-top: 5px;
+                        h4 {
+                            font-size: 1.1em;
+                            font-weight: 600;
+                        }
+                    }
+                    .links {
+                        width: 100%;
+                        margin-top: -7px;
+                        a {
+                            padding-right: 2%;
+                            font-size: 0.9em;
+                            text-decoration: none;
+                        }
                     }
                 }
             }
