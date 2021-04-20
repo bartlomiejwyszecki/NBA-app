@@ -1,0 +1,20 @@
+<nav>
+    <div class="navContent" [ngClass]="{ 'active' : toggler }">
+        <div class="hamburger" (click)="toggler = !toggler">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <div class="logo">
+            <img src="assets/nba-logo.png" alt="Nba logo" >
+        </div>
+        <div class="navitems">
+            <div class="navitem">
+                <a>Home</a>
+            </div>
+            <div class="navitem">
+                <a>Teams</a>
+            </div>
+        </div>
+    </div>
+</nav>
