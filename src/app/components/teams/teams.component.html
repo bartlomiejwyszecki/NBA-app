@@ -13,8 +13,8 @@
                             <h4>{{ team.fullName }}</h4>
                         </div>
                         <div class="links">
-                            <a href="#" [routerLink]="['/teams/team-profile', 53]">Profile</a>
-                            <a href="#" [routerLink]="['/teams/team-stats', 53]">Stats</a>
+                            <a href="#" [routerLink]="['/teams/team-profile', team.teamId]">Profile</a>
+                            <a href="#" [routerLink]="['/teams/team-stats', team.teamId]">Stats</a>
                         </div>
                     </div>
                 </div>

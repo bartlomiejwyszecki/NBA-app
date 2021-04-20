@@ -21,6 +21,7 @@ export class TeamsComponent implements OnInit {
         this.divisions[key as keyof Divisions].teams = teams.api.teams.filter(
           (team: any) => team.leagues.standard.divName.toLowerCase() === key);
       }
+      console.log(teams.api.teams);
     });
   }
 }

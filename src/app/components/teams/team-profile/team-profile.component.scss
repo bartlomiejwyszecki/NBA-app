@@ -1,0 +1,42 @@
+.background {
+    height: 240px;
+    width: 100%;
+    position: relative;
+    background: #000000;
+    .bg {
+        position: absolute;
+        overflow: hidden;
+        width: 100%;
+        height: 240px;
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0.05;
+        img{
+            height: auto;
+            width: auto;
+            margin-top: -50px;
+            opacity: 0.05;
+            overflow: hidden;
+            position: relative;
+            z-index: 0;
+        }
+    }
+}
+.content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    background: #fafafa;
+}
+
+@media only screen and (min-width: 580px) {
+    .background .bg {
+        background-size: 45%;
+    }
+}
+@media only screen and (max-width: 580px) {
+    .all { overflow: hidden; }
+    .background .bg {
+        background-size: 90%;
+    }
+}
