@@ -14,4 +14,4 @@ const routes: Routes = [
     CommonModule,
     RouterModule.forChild(routes) ]
 })
-export class SculpturesModule { }
+export class TeamsModule { }

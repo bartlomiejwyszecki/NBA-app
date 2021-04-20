@@ -16,11 +16,11 @@ export class TeamsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.http.getTeams().subscribe(teams => {
-    //   for (let key in _divisions) {
-    //     this.divisions[key as keyof Divisions].teams = teams.api.teams.filter(
-    //       (team: any) => team.leagues.standard.divName.toLowerCase() === key);
-    //   }
-    // });
+    this.http.getTeams().subscribe(teams => {
+      for (let key in _divisions) {
+        this.divisions[key as keyof Divisions].teams = teams.api.teams.filter(
+          (team: any) => team.leagues.standard.divName.toLowerCase() === key);
+      }
+    });
   }
 }

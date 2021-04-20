@@ -47,6 +47,10 @@ nav {
                 margin: 1vw;
                 cursor: pointer;
                 transition: 0.1s;
+                a {
+                    text-decoration: none;
+                    color: #ffffff;
+                }
             }
         }
     }
@@ -54,9 +58,9 @@ nav {
 
 nav:hover {
     transition: 0.1s;
-    color: $non-hover;
+    .navContent .navitems .navitem a { color: $non-hover; }
     .navContent .navitem:hover {
-        color: #ffffff;
+        a:hover { color: #ffffff; }
         transition: 0.25s;
     }
 }
