@@ -1,32 +1,45 @@
-h2 {
-    font-size: 1.1em;
-    font-weight: 700;
+$border: #eeeeee;
+
+@mixin width {
     width: 98%;
     margin-left: 1%;
-    border-bottom: 1px solid #eeeeee;
+    border-bottom: 1px solid $border;
+}
+@mixin header {
+    font-weight: 700;
+    font-size: 1em;
+}
+@mixin flex {
+    display: flex;
+    align-items: center;
+}
+
+h2 {
+    @include width;
+    @include header;
     padding: 15px 0 15px 10px;
 }
+
 
 .container {
     font-family: 'Source Sans Pro', sans-serif;
     .all {
         box-shadow: 0px 0px 15px -8px #757575;
         background: #ffffff;
+        border-radius: 5px;
         .divisions {
-            width: 98%;
-            margin-left: 1%;
+            @include width;
+            border: none;
             padding: 30px 0 0 0;
             .divHeader {
                 text-transform: uppercase;
-                font-weight: 700;
-                font-size: 1em;
+                @include header;
+                padding-left: 10px;
             }
             .team {
-                display: flex;
-                align-items: center;
-                width: 100%;
+                @include width;
+                @include flex;
                 height: 60px;
-                border-bottom: 1px solid #eeeeee;
                 img {
                     width: auto;
                     max-width: 40px;
@@ -35,8 +48,7 @@ h2 {
                 }
                 .description {
                     height: 100%;
-                    display: flex;
-                    align-items: center;
+                    @include flex;
                     padding-left: 30px;
                     h4 {
                         font-size: 1em;
