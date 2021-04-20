@@ -17,9 +17,8 @@ $border: #eeeeee;
 h2 {
     @include width;
     @include header;
-    padding: 15px 0 15px 10px;
+    padding: 15px 0 15px 15px;
 }
-
 
 .container {
     padding: 10vw 0 10vw 0;
@@ -57,5 +56,11 @@ h2 {
                 }
             }
         }
+    }
+}
+
+@media only screen and (max-width: 580px) {
+    .container {
+        overflow: hidden;
     }
 }

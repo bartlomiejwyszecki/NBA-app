@@ -1,0 +1,62 @@
+h2 {
+  width: 98%;
+  margin-left: 1%;
+  border-bottom: 1px solid #eeeeee;
+  font-weight: 700;
+  font-size: 1em;
+  padding: 15px 0 15px 10px;
+}
+
+.container {
+  font-family: "Source Sans Pro", sans-serif;
+}
+.container .all {
+  -webkit-box-shadow: 0px 0px 15px -8px #757575;
+          box-shadow: 0px 0px 15px -8px #757575;
+  background: #ffffff;
+  border-radius: 5px;
+}
+.container .all .divisions {
+  width: 98%;
+  margin-left: 1%;
+  border-bottom: 1px solid #eeeeee;
+  border: none;
+  padding: 30px 0 0 0;
+}
+.container .all .divisions .divHeader {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1em;
+  padding-left: 10px;
+}
+.container .all .divisions .team {
+  width: 98%;
+  margin-left: 1%;
+  border-bottom: 1px solid #eeeeee;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 60px;
+}
+.container .all .divisions .team img {
+  width: auto;
+  max-width: 40px;
+  height: auto;
+  max-height: 35px;
+}
+.container .all .divisions .team .description {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 30px;
+}
+.container .all .divisions .team .description h4 {
+  font-size: 1em;
+}/*# sourceMappingURL=teams.component.css.map */

@@ -73,10 +73,10 @@ nav:hover {
     nav .navContent .hamburger { display: flex; }
     nav .navContent .navitems {
         position: fixed;
-        height: 100vh;
+        height: calc(100vh - 55px);
         width: 40vw;
         left: -42.5vw;
-        bottom: -55px;
+        bottom: 0;
         transition: 1s;
         margin-top: 120px;
         background: $bg;
