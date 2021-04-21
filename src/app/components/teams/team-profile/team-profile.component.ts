@@ -12,6 +12,7 @@ import { _divisions } from './../data/data';
 })
 export class TeamProfileComponent implements OnInit {
   team!: Team;
+  players!: any[];
 
   constructor(private route: ActivatedRoute, private http: PlayersService) { }
 
@@ -22,6 +23,9 @@ export class TeamProfileComponent implements OnInit {
     if (team !== undefined) {
       this.team = team;
     }
-    // this.http.getPlayersByTeam(param);
+    // this.http.getNbaPlayers().subscribe(players => {
+    //   this.players = players.api.players.filter((player: any) => player.teamId == param && player.startNba > 0);
+    //   console.log(this.players);
+    // });
   }
 }

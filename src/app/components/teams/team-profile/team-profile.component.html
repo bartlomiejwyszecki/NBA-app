@@ -11,35 +11,26 @@
                     <th>player</th>
                     <th>#</th>
                     <th>pos</th>
-                    <th>height</th>
-                    <th>weight</th>
+                    <th>height(m)</th>
+                    <th>weight(kg)</th>
                     <th>birthdate</th>
-                    <th>age</th>
-                    <th>school</th>
+                    <th>college</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Bartłomiej Wyszecki</td>
-                    <td>23</td>
-                    <td>C</td>
-                    <td>5-11</td>
-                    <td>210 lbs</td>
-                    <td>21.08.1996</td>
-                    <td>24</td>
-                    <td>Uniwerystet Ekonomiczny Katowice</td>
-                </tr>
-                <tr>
-                    <td>ABC</td>
-                    <td>23</td>
-                    <td>C</td>
-                    <td>5-11</td>
-                    <td>210 lbs</td>
-                    <td>21.08.1996</td>
-                    <td>24</td>
-                    <td>Uniwerystet Ekonomiczny Katowice</td>
+                <tr *ngFor="let player of players">
+                    <td>{{ player.firstName }} {{ player.lastName }}</td>
+                    <td>{{ player.leagues.standard.jersey }}</td>
+                    <td>{{ player.leagues.standard.pos }}</td>
+                    <td>{{ player.heightInMeters }}</td>
+                    <td>{{ player.weightInKilograms }}</td>
+                    <td>{{ player.dateOfBirth }}</td>
+                    <td>{{ player.collegeName }}</td>
                 </tr>
             </tbody>
         </table>
+        <div *ngIf="!players" class="waiter">
+            <h4>Loading...</h4>
+        </div>
     </div>
 </div>

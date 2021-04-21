@@ -4,7 +4,7 @@
     align-items: center;
 }
 @mixin padding {
-    padding: 10px 10px 10px 8px;
+    padding: 10px 15px 10px 8px;
     white-space: nowrap;
 }
 ::-webkit-scrollbar {
@@ -60,4 +60,20 @@ $light-grey: #e0e0e0;
             }
         }
     }
+    .waiter {
+        h4 {
+            width: 100%;
+            text-align: center;
+            padding-top: 30px;
+            font-size: 1.2em;
+            font-weight: 800;
+            color: #bdbdbd;
+            animation: 2s waiting infinite;
+        }
+    }
+}
+@keyframes waiting {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
 }

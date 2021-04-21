@@ -27,8 +27,6 @@ export class PlayersService {
     })
   }
   getPlayersByTeam(teamId: number) {
-    return this.getNbaPlayers().subscribe(players => {
-      console.log(players.api.players.filter((player: any) => player.teamId == teamId && player.startNba > 0));
-    })
+    return this.getNbaPlayers();
   }
 }
