@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { TeamsComponent } from './teams.component';
 import { TeamProfileComponent } from './team-profile/team-profile.component';
 import { TeamStatsComponent } from './team-stats/team-stats.component';
+import { PartialComponent } from './partial/partial.component';
 
 
 const routes: Routes = [
@@ -14,7 +15,7 @@ const routes: Routes = [
 ]
 
 @NgModule({
-  declarations: [ TeamsComponent, TeamProfileComponent ],
+  declarations: [ TeamsComponent, TeamProfileComponent, TeamStatsComponent, PartialComponent ],
   imports: [ 
     CommonModule,
     RouterModule.forChild(routes) ]

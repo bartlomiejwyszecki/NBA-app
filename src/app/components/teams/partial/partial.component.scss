@@ -1,0 +1,112 @@
+$dark: #131213;
+@mixin flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+h1 {
+    font-weight: 600;
+    font-size: 2em;
+    letter-spacing: -2px;
+}
+.background {
+    font-family: 'Source Sans Pro', sans-serif;
+    height: 300px;
+    width: 100%;
+    position: relative;
+    background: $dark;
+    color: #ffffff;
+    .bg {
+        position: absolute;
+        z-index: 0;
+        overflow: hidden;
+        width: 70%;
+        margin-left: 15%;
+        height: 300px;
+        background-position: left center;
+        background-repeat: no-repeat;
+        background-image: url('https://www.logolynx.com/images/logolynx/4d/4da58217a171c009183cc9f52a6b2d31.png');
+        opacity: 0.075;
+    }
+    .description {
+        @include flex;
+        height: 100%;
+        position: relative;
+        .logo {
+            text-align: center;
+            img {
+                width: 120px;
+                height: auto;
+            }
+        }
+        .button button {
+            background: none;
+            cursor: pointer;
+            border-radius: 30px;
+            color: #ffffff;
+            border: 1px solid #ffffff;
+            font-size: 0.9em;
+            padding: 5px 40px 5px 40px;
+            i { padding-right: 5px; }
+        }
+        .rank {
+            @include flex;
+            justify-content: center;
+            h1 {
+                font-weight: 400;
+                border-left: 1px solid #ffffff;
+                padding-left: 10px;
+            }
+        }
+    }
+}
+.nav {
+    height: 45px;
+    background: #ffffff;
+    box-shadow: 0px 1px 15px -8px #757575;
+    @include flex;
+    .list {
+        @include flex;
+        height: 100%;
+        padding-left: 30px;
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: $dark;
+            margin-left: 30px;
+            padding: 10px 10px 10px 10px;
+            height: 100%;
+            font-size: 0.9em;
+            font-weight: 400;
+        }
+        .active, a:hover {
+            font-weight: 700;
+            border-bottom: 5px solid $dark;
+            transform: 1s;
+        }
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .background .bg {
+        background-size: 40%;
+    }
+}
+@media only screen and (min-width: 576px) and (max-width: 991px) {
+    .background .bg {
+        background-size: 60%;
+    }
+}
+@media only screen and (max-width: 576px) {
+    .background {
+        overflow: hidden;
+        .bg {
+        background-size: 100%;
+        }
+    }
+}
+@media only screen and (max-width: 768px) {
+    .background {
+        text-align: center;
+    }
+}

@@ -14,10 +14,10 @@ export class TeamProfileComponent implements OnInit {
   constructor(private http: ApiService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.http.getTeam(this.route.snapshot.params.id).subscribe(team => {
-      this.team = team.api.teams[0];
-      console.log(this.team);
-    });
+    // this.http.getTeam(this.route.snapshot.params.id).subscribe(team => {
+    //   this.team = team.api.teams[0];
+    //   console.log(this.team);
+    // });
   }
 
 }
