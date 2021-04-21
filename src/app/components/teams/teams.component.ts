@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { _divisions, Divisions } from 'src/app/models/divisions-model';
+
+import { Division } from 'src/app/models/divisions-model';
+import { _divisions } from './data/data';
+
 import { ApiService } from 'src/app/services/api.service';
 
 
@@ -9,19 +12,12 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./teams.component.scss']
 })
 export class TeamsComponent implements OnInit {
-  divisions: Divisions;
+  divisions: Division[] = [];
 
-  constructor(private http: ApiService) {
-    this.divisions = _divisions;
-  }
+  constructor(private http: ApiService) {}
 
   ngOnInit(): void {
-    // this.http.getTeams().subscribe(teams => {
-    //   for (let key in _divisions) {
-    //     this.divisions[key as keyof Divisions].teams = teams.api.teams.filter(
-    //       (team: any) => team.leagues.standard.divName.toLowerCase() === key);
-    //   }
-    //   console.log(teams.api.teams);
-    // });
+    this.divisions = _divisions;
+    console.log(_divisions);
   }
 }

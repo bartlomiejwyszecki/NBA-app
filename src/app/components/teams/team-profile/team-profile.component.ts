@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Team } from 'src/app/models/team';
+import { Team } from 'src/app/models/divisions-model';
 import { ApiService } from 'src/app/services/api.service';
+import { PlayersService } from 'src/app/services/players.service';
+import { _divisions } from './../data/data';
 
 @Component({
   selector: 'app-team-profile',
@@ -9,15 +11,16 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./team-profile.component.scss']
 })
 export class TeamProfileComponent implements OnInit {
-  team: Team | any = {};
+  team!: Team;
 
-  constructor(private http: ApiService, private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute) { }
 
-  ngOnInit(): void {
-    // this.http.getTeam(this.route.snapshot.params.id).subscribe(team => {
-    //   this.team = team.api.teams[0];
-    //   console.log(this.team);
-    // });
+  ngOnInit() {
+    const param = this.route.snapshot.params.id;
+    const team = _divisions.filter(div => div.teams.find(team => team.teamId == param))[0].teams.find(
+      team => team.teamId == param);
+    if (team !== undefined) {
+      this.team = team;
+    }
   }
-
 }

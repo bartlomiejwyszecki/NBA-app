@@ -1,17 +1,16 @@
 <div class="background">
     <ng-container>
-        <div class="bg"></div> 
-        <!-- [ngStyle]="{'background-image': 'url(' + team.logo + ')'}" -->
+        <div class="bg" [ngStyle]="{'background-image': 'url(' + team.logo + ')'}"></div> 
     </ng-container>
     <div class="container" style="height: 100%;">
         <div class="row description" style="height: 100%;">
             <div class="col-sm-12 col-md-3 col-lg-2 logo">
-                <img src="https://www.logolynx.com/images/logolynx/4d/4da58217a171c009183cc9f52a6b2d31.png">
+                <img src="{{ team.logo }}">
             </div>
             <div class="col-sm-12 col-md-6 col-lg-6">
                 <div class="row name">
                     <div class="col-12">
-                        <h1>Milwakuee Bucks</h1>
+                        <h1>{{ team.fullName }}</h1>
                     </div>
                     <div class="col-12 button">
                         <button><i class="bi bi-star"></i> FAVORITE</button>
@@ -28,7 +27,7 @@
 </div>
 <div class="nav">
     <div class="list">
-        <a class="active">Profile</a>
-        <a>Stats</a>
+        <a href="#" [routerLink]="['/teams/team-profile', 1]">Profile</a>
+        <a href="#" [routerLink]="['/teams/team-stats', 1]">Stats</a>
     </div>
 </div>

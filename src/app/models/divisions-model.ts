@@ -1,4 +1,5 @@
-export interface Teams {
+export interface Team {
+  allStar: string,
   city: string,
   fullName: string,
   leagues: {
@@ -8,40 +9,13 @@ export interface Teams {
     }
   },
   logo: string,
+  nbaFranchise: string,
+  nickname: string,
+  shortName: string,
   teamId: string
 }
 
 export interface Division {
-  teams: Teams[]
-}
-
-export interface Divisions {
-  atlantic: Division,
-  central: Division,
-  southeast: Division,
-  northwest: Division,
-  pacific: Division,
-  southwest: Division
-}
-
-export const _divisions: Divisions = {
-  atlantic: {
-    teams: [
-      ]
-  },
-  central: {
-    teams: []
-  },
-  southeast: {
-    teams: []
-  },
-  northwest: {
-    teams: []
-  },
-  pacific: {
-    teams: []
-  },
-  southwest: {
-    teams: []
-  }
+  name: string,
+  teams: Team[]
 }

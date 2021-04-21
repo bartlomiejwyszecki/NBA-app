@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Team } from 'src/app/models/divisions-model';
 
 @Component({
   selector: 'app-partial',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./partial.component.scss']
 })
 export class PartialComponent implements OnInit {
+  @Input() team!: Team;
 
   constructor() { }
 

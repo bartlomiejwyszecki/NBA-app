@@ -1,5 +1,41 @@
-<app-partial></app-partial>
+<app-partial [team]="team"></app-partial>
 
-<div class="content">
-    <h1>{{ team?.fullName }}</h1>
+<div class="container">
+    {{ team.fullName }}
+    <div class="content">
+        <div class="info">
+            <h3>Info</h3>
+            <table>
+                <thead>
+                    <th>Milwakuee Bucks</th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Full name</td>
+                        <td>Milwkuee Bucks</td>
+                    </tr>
+                    <tr>
+                        <td>Short name</td>
+                        <td>MIL</td>
+                    </tr>
+                    <tr>
+                        <td>Conference</td>
+                        <td>East</td>
+                    </tr>
+                    <tr>
+                        <td>Division</td>
+                        <td>Central</td>
+                    </tr>
+                    <tr>
+                        <td>Arena</td>
+                        <td>Example arena</td>
+                    </tr>
+                    <tr>
+                        <td>Head coach</td>
+                        <td>Example coach</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
