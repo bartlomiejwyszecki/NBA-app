@@ -13,7 +13,7 @@ import { _divisions } from './../data/data';
 export class TeamProfileComponent implements OnInit {
   team!: Team;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private http: PlayersService) { }
 
   ngOnInit() {
     const param = this.route.snapshot.params.id;
@@ -22,5 +22,6 @@ export class TeamProfileComponent implements OnInit {
     if (team !== undefined) {
       this.team = team;
     }
+    // this.http.getPlayersByTeam(param);
   }
 }
