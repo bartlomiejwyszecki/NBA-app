@@ -1,27 +1,62 @@
 <div class="background">
-    <ng-container>
-        <div class="bg" [ngStyle]="{'background-image': 'url(' + team.logo + ')'}"></div> 
-    </ng-container>
+    <div class="bg" [ngStyle]="{'background-image': 'url(' + team.logo + ')'}"></div> 
     <div class="container" style="height: 100%;">
         <div class="row description" style="height: 100%;">
             <div class="col-sm-12 col-md-3 col-lg-2 logo">
                 <img src="{{ team.logo }}">
             </div>
-            <div class="col-sm-12 col-md-6 col-lg-5">
-                <div class="row name">
-                    <div class="col-12">
-                        <h1>{{ team.fullName }}</h1>
+            <ng-container *ngIf="!standing">
+                <div class="col-sm-12 col-md-9 col-lg-10 loading">
+                    <h1>Loading <i class="bi bi-hourglass-split"></i></h1>
+                </div>
+            </ng-container>
+            <ng-container *ngIf="standing">
+                <div class="col-sm-12 col-md-3 col-lg-3">
+                    <div class="row name">
+                        <div class="col-12">
+                            <h1>{{ team.fullName }}</h1>
+                        </div>
+                        <div class="col-12">
+                            <div class="bilans">
+                                <span>{{ standing.win }} - {{ standing.loss }}</span>
+                                <span>|</span>
+                                <span>{{ standing.conference.rank }}th in {{ team.leagues.standard.confName }}</span>
+                            </div>
+                        </div>
                     </div>
+                </div>
+                <div class="col-sm-12 col-md-3 col-lg-3">
                     <div class="col-12 button">
                         <button><i class="bi bi-star"></i> FAVORITE</button>
                     </div>
                 </div>
-            </div>
-            <div class="col-sm-12 col-md-3 col-lg-5">
-                <div class="rank">
-                    <h1>10th in East</h1>
+                <div class="col-sm-12 col-md-3 col-lg-4">
+                    <div class="rank">
+                        <div class="row">
+                            <div class="col-6 conf">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h4>conf</h4>
+                                    </div>
+                                    <div class="col-12">
+                                        <h3>{{ standing.conference.rank }}th</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 div">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h4>div</h4>
+                                    </div>
+                                    <div class="col-12">
+                                        <h3>{{ standing.division.rank }}rd</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </ng-container>
         </div>
     </div>
 </div>

@@ -11,7 +11,7 @@ h1 {
 }
 .background {
     font-family: 'Source Sans Pro', sans-serif;
-    height: 300px;
+    height: 330px;
     width: 100%;
     position: relative;
     background: $dark;
@@ -20,12 +20,12 @@ h1 {
         position: absolute;
         z-index: 0;
         overflow: hidden;
-        width: 70%;
-        margin-left: 15%;
-        height: 300px;
+        width: 80%;
+        margin-left: 10%;
+        height: 330px;
         background-position: left center;
         background-repeat: no-repeat;
-        opacity: 0.075;
+        opacity: 0.06;
     }
     .description {
         @include flex;
@@ -34,8 +34,21 @@ h1 {
         .logo {
             text-align: center;
             img {
-                width: 120px;
+                width: 110px;
                 height: auto;
+            }
+        }
+        .loading {
+            color: #fafafa;
+            text-align: center;
+            font-size: 0.8em;
+            animation: 2.5s loading infinite linear;
+        }
+        .name {
+            .bilans {
+                span {
+                    padding: 4px;
+                }
             }
         }
         .button button {
@@ -45,16 +58,23 @@ h1 {
             color: #ffffff;
             border: 1px solid #ffffff;
             font-size: 0.9em;
-            padding: 5px 40px 5px 40px;
+            padding: 3px 40px 3px 40px;
             i { padding-right: 5px; }
         }
         .rank {
             @include flex;
             justify-content: center;
-            h1 {
-                font-weight: 400;
-                border-left: 1px solid #ffffff;
-                padding-left: 10px;
+            text-align: center;
+            h4 { 
+                text-transform: uppercase;
+                font-size: 0.95em;
+                font-weight: 500;
+            }
+            h3 {
+                font-weight: 800;
+            }
+            .conf {
+                border-right: 1px solid rgba(255, 255, 255, .4);
             }
         }
     }
@@ -108,4 +128,10 @@ h1 {
     .background {
         text-align: center;
     }
+}
+
+@keyframes loading {
+    0% { opacity: 0 }
+    50% { opacity: 0.25; transform: scale(1.05); }
+    100% { opacity: 0 }
 }

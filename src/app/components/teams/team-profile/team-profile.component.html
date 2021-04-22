@@ -1,7 +1,7 @@
 <app-partial [team]="team"></app-partial>
 
 <div class="container">
-    <div class="content">
+    <div class="roster">
         <div class="info">
             <h3>Roster</h3>
         </div>
@@ -31,6 +31,21 @@
         </table>
         <div *ngIf="!players" class="waiter">
             <h4>Loading...</h4>
+        </div>
+    </div>
+    <div class="staff">
+        <div class="info">
+            <h3>Staff & additional info</h3>
+        </div>
+        <div class="row infoContent" *ngFor="let STAFF of staff">
+            <div class="col-sm-4 col-md-3 col-lg-2 left">
+                <h6>{{ STAFF.name }}</h6>
+            </div>
+            <div class="col-sm-8 col-md-9 col-lg-10 right">
+                <div class="rightSide">
+                    <h6 *ngFor="let element of STAFF.list">{{ element }}</h6>
+                </div>
+            </div>
         </div>
     </div>
 </div>

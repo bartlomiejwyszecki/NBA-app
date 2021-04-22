@@ -510,3 +510,30 @@ export const _divisions = [
         ]
     }
 ];
+
+export const _staff = [
+    {
+        "name": "Head coach",
+        "list": ["Example head coach"]
+    },
+    {
+        "name": "Associate Head Coach",
+        "list": ["Example associate head coach"]
+    },
+    {
+        "name": "Assistant Coach",
+        "list": [
+            "First example assistant",
+            "Second example assistant",
+            "Third example assistant",
+            "Fourth example assistant",
+            "Fifth example assistant"
+        ]
+    },
+    {
+        "name": "Arena",
+        "list": [
+            "Example team arena"
+        ]
+    }
+]

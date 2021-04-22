@@ -19,3 +19,8 @@ export interface Division {
   name: string,
   teams: Team[]
 }
+
+export interface Staff {
+  name: string,
+  list: string[]
+}

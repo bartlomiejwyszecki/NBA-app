@@ -6,6 +6,7 @@ import { TeamsComponent } from './teams.component';
 import { TeamProfileComponent } from './team-profile/team-profile.component';
 import { TeamStatsComponent } from './team-stats/team-stats.component';
 import { PartialComponent } from './partial/partial.component';
+import { TeamsService } from 'src/app/services/teams/api.service';
 
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   declarations: [ TeamsComponent, TeamProfileComponent, TeamStatsComponent, PartialComponent ],
   imports: [ 
     CommonModule,
-    RouterModule.forChild(routes) ]
+    RouterModule.forChild(routes) ],
+  providers: [TeamsService]
 })
 export class TeamsModule { }

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-home',
@@ -8,12 +7,9 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private http: ApiService) { }
+  constructor() { }
 
   ngOnInit(): void {
-    // this.http.getPlayers().subscribe((players) => {
-    //   console.log(players);
-    // });
   }
 
 }

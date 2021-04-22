@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Team } from 'src/app/models/divisions-model';
-import { ApiService } from 'src/app/services/api.service';
-import { PlayersService } from 'src/app/services/players.service';
-import { _divisions } from './../data/data';
+import { Staff, Team } from 'src/app/models/divisions-model';
+import { TeamsService } from 'src/app/services/teams/api.service';
+import { _divisions, _staff } from './../data/data';
 
 @Component({
   selector: 'app-team-profile',
@@ -13,8 +12,9 @@ import { _divisions } from './../data/data';
 export class TeamProfileComponent implements OnInit {
   team!: Team;
   players!: any[];
+  staff: Staff[] = _staff;
 
-  constructor(private route: ActivatedRoute, private http: PlayersService) { }
+  constructor(private route: ActivatedRoute, private http: TeamsService) { }
 
   ngOnInit() {
     const param = this.route.snapshot.params.id;
@@ -23,6 +23,7 @@ export class TeamProfileComponent implements OnInit {
     if (team !== undefined) {
       this.team = team;
     }
+
     // this.http.getNbaPlayers().subscribe(players => {
     //   this.players = players.api.players.filter((player: any) => player.teamId == param && player.startNba > 0);
     //   console.log(this.players);
