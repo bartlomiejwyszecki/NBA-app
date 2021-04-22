@@ -62,7 +62,7 @@
 </div>
 <div class="nav">
     <div class="list">
-        <a href="#" [routerLink]="['/teams/team-profile', 1]">Profile</a>
-        <a href="#" [routerLink]="['/teams/team-stats', 1]">Stats</a>
+        <a href="#" [routerLink]="['/teams/team-profile', team.teamId]" routerLinkActive="active">Profile</a>
+        <a href="#" [routerLink]="['/teams/team-stats', team.teamId]" routerLinkActive="active">Stats</a>
     </div>
 </div>

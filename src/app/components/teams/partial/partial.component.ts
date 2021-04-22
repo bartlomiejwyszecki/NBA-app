@@ -16,9 +16,9 @@ export class PartialComponent implements OnInit {
 
   ngOnInit(): void {
     const teamId = parseInt(this.team.teamId);
-    this.http.getTeamStanding(teamId).subscribe(standing => {
-      this.standing = standing.api.standings[0];
-    });
+    // this.http.getTeamStanding(teamId).subscribe(standing => {
+    //   this.standing = standing.api.standings[0];
+    // });
   }
 
 }
