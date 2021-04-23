@@ -20,7 +20,7 @@
                             <div class="bilans">
                                 <span>{{ standing.win }} - {{ standing.loss }}</span>
                                 <span>|</span>
-                                <span>{{ standing.conference.rank }}th in {{ team.leagues.standard.confName }}</span>
+                                <span>{{ standing.conference.rank }}{{ standing.conference.rank | numeral }} in {{ team.leagues.standard.confName }}</span>
                             </div>
                         </div>
                     </div>
@@ -39,7 +39,7 @@
                                         <h4>conf</h4>
                                     </div>
                                     <div class="col-12">
-                                        <h3>{{ standing.conference.rank }}th</h3>
+                                        <h3>{{ standing.conference.rank }}{{ standing.conference.rank | numeral }}</h3>
                                     </div>
                                 </div>
                             </div>
@@ -49,7 +49,7 @@
                                         <h4>div</h4>
                                     </div>
                                     <div class="col-12">
-                                        <h3>{{ standing.division.rank }}rd</h3>
+                                        <h3>{{ standing.division.rank }}{{ standing.division.rank | numeral }}</h3>
                                     </div>
                                 </div>
                             </div>

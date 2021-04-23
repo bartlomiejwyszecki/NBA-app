@@ -24,9 +24,9 @@ export class TeamProfileComponent implements OnInit {
       this.team = team;
     }
 
-    // this.http.getNbaPlayers().subscribe(players => {
-    //   this.players = players.api.players.filter((player: any) => player.teamId == param && player.startNba > 0);
-    //   console.log(this.players);
-    // });
+    this.http.getNbaPlayers().subscribe(players => {
+      this.players = players.api.players.filter((player: any) => player.teamId == param && player.startNba > 0);
+      console.log(this.players);
+    });
   }
 }

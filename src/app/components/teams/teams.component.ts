@@ -10,6 +10,7 @@ import { _divisions } from './data/data';
 })
 export class TeamsComponent implements OnInit {
   divisions: Division[] = [];
+  number: number = 1;
 
   constructor() {}
 

@@ -7,6 +7,8 @@ import { TeamProfileComponent } from './team-profile/team-profile.component';
 import { TeamStatsComponent } from './team-stats/team-stats.component';
 import { PartialComponent } from './partial/partial.component';
 import { TeamsService } from 'src/app/services/teams/api.service';
+// import { NumeralPipe } from 'src/app/pipes/numeral';
+import { PipeModule } from 'src/app/pipes/pipes.module';
 
 
 const routes: Routes = [
@@ -16,10 +18,17 @@ const routes: Routes = [
 ]
 
 @NgModule({
-  declarations: [ TeamsComponent, TeamProfileComponent, TeamStatsComponent, PartialComponent ],
+  declarations: [ 
+    TeamsComponent, 
+    TeamProfileComponent, 
+    TeamStatsComponent, 
+    PartialComponent
+   ],
   imports: [ 
     CommonModule,
-    RouterModule.forChild(routes) ],
+    RouterModule.forChild(routes),
+    PipeModule
+  ],
   providers: [TeamsService]
 })
 export class TeamsModule { }
