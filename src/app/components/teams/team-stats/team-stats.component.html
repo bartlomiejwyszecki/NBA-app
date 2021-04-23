@@ -1,1 +1,117 @@
 <app-partial [team]="team"></app-partial>
+
+<div class="container">
+    <div class="table">
+        <div class="info">
+            <h3>Stats overall</h3>
+        </div>
+        <ng-container *ngIf="standing">
+            <table>
+                <thead>
+                    <tr class="upper">
+                        <th colspan="2">total games</th>
+                        <th colspan="3">last ten games</th>
+                        <th colspan="2">total games %</th>
+                    </tr>
+                    <tr>
+                        <th>win</th>
+                        <th>loss</th>
+                        <th>bilans</th>
+                        <th>win</th>
+                        <th>loss</th>
+                        <th>win</th>
+                        <th>loss</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ standing.win }}</td>
+                        <td>{{ standing.loss }}</td>
+                        <td>{{ standing.gamesBehind }}</td>
+                        <td>{{ standing.lastTenWin }}</td>
+                        <td>{{ standing.lastTenLoss }}</td>
+                        <td>{{ standing.winPercentage }}</td>
+                        <td>{{ standing.lossPercentage }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </ng-container>
+        <div class="waiter"  *ngIf="!standing">
+            <h4>Loading...</h4>
+        </div>
+    </div>
+
+    <div class="table">
+        <div class="info">
+            <h3>Stats by conference / division</h3>
+        </div>
+        <ng-container *ngIf="standing">
+            <table>
+                <thead>
+                    <tr class="upper">
+                        <th colspan="4">Conference</th>
+                        <th colspan="4">Division</th>
+                    </tr>
+                    <tr>
+                        <th>name</th>
+                        <th>rank</th>
+                        <th>win</th>
+                        <th>loss</th>
+                        <th>name</th>
+                        <th>rank</th>
+                        <th>win</th>
+                        <th>loss</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ standing.conference.name | titlecase }}</td>
+                        <td>{{ standing.conference.rank }}</td>
+                        <td>{{ standing.conference.win }}</td>
+                        <td>{{ standing.conference.loss }}</td>
+                        <td>{{ standing.division.name | titlecase }}</td>
+                        <td>{{ standing.division.rank }}</td>
+                        <td>{{ standing.division.win }}</td>
+                        <td>{{ standing.division.loss }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </ng-container>
+        <div class="waiter"  *ngIf="!standing">
+            <h4>Loading...</h4>
+        </div>
+    </div>
+
+    <div class="table">
+        <div class="info">
+            <h3>Stats by home / away</h3>
+        </div>
+        <ng-container *ngIf="standing">
+            <table>
+                <thead>
+                    <tr class="upper">
+                        <th colspan="2">home</th>
+                        <th colspan="2">away</th>
+                    </tr>
+                    <tr>
+                        <th>win</th>
+                        <th>loss</th>
+                        <th>win</th>
+                        <th>loss</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ standing.home.win }}</td>
+                        <td>{{ standing.home.loss }}</td>
+                        <td>{{ standing.away.win }}</td>
+                        <td>{{ standing.away.loss }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </ng-container>
+        <div class="waiter" *ngIf="!standing">
+            <h4>Loading...</h4>
+        </div>
+    </div>
+</div>

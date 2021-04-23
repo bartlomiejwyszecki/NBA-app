@@ -16,7 +16,8 @@ export const _divisions = [
                         "confName": "East",
                         "divName": "Atlantic"
                     }
-                }
+                },
+                "color": "008348"
             },
             {
                 "city": "Brooklyn",
@@ -32,7 +33,8 @@ export const _divisions = [
                         "confName": "East",
                         "divName": "Atlantic"
                     }
-                }
+                },
+                "color": "000000"
             },
             {
                 "city": "New York",
@@ -48,7 +50,8 @@ export const _divisions = [
                         "confName": "East",
                         "divName": "Atlantic"
                     }
-                }
+                },
+                "color": "006bb6"
             },
             {
                 "city": "Philadelphia",
@@ -64,7 +67,8 @@ export const _divisions = [
                         "confName": "East",
                         "divName": "Atlantic"
                     }
-                }
+                },
+                "color": "006bb6"
             },
             {
                 "city": "Toronto",
@@ -80,7 +84,8 @@ export const _divisions = [
                         "confName": "East",
                         "divName": "Atlantic"
                     }
-                }
+                },
+                "color": "000000"
             }
         ]
     },
@@ -101,7 +106,8 @@ export const _divisions = [
                         "confName": "East",
                         "divName": "Central"
                     }
-                }
+                },
+                "color": "ce1141"
             },
             {
                 "city": "Cleveland",
@@ -117,7 +123,8 @@ export const _divisions = [
                         "confName": "East",
                         "divName": "Central"
                     }
-                }
+                },
+                "color": "6f263d"
             },
             {
                 "city": "Detroit",
@@ -133,7 +140,8 @@ export const _divisions = [
                         "confName": "East",
                         "divName": "Central"
                     }
-                }
+                },
+                "color": "1d428a"
             },
             {
                 "city": "Indiana",
@@ -149,7 +157,8 @@ export const _divisions = [
                         "confName": "East",
                         "divName": "Central"
                     }
-                }
+                },
+                "color": "002d62"
             },
             {
                 "city": "Milwaukee",
@@ -165,7 +174,8 @@ export const _divisions = [
                         "confName": "East",
                         "divName": "Central"
                     }
-                }
+                },
+                "color": "00471b"
             }
         ]
     },
@@ -186,7 +196,8 @@ export const _divisions = [
                         "confName": "East",
                         "divName": "Southeast"
                     }
-                }
+                },
+                "color": "e03a3e"
             },
             {
                 "city": "Charlotte",
@@ -202,7 +213,8 @@ export const _divisions = [
                         "confName": "East",
                         "divName": "Southeast"
                     }
-                }
+                },
+                "color": "00788c"
             },
             {
                 "city": "Miami",
@@ -218,7 +230,8 @@ export const _divisions = [
                         "confName": "East",
                         "divName": "Southeast"
                     }
-                }
+                },
+                "color": "98002e"
             },
             {
                 "city": "Orlando",
@@ -234,7 +247,8 @@ export const _divisions = [
                         "confName": "East",
                         "divName": "Southeast"
                     }
-                }
+                },
+                "color": "0077c0"
             },
             {
                 "city": "Washington",
@@ -250,7 +264,8 @@ export const _divisions = [
                         "confName": "East",
                         "divName": "Southeast"
                     }
-                }
+                },
+                "color": "002b5c"
             }
         ]
     },
@@ -262,7 +277,7 @@ export const _divisions = [
                 "fullName": "Denver Nuggets",
                 "teamId": "9",
                 "nickname": "Nuggets",
-                "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/7/76/Denver_Nuggets.svg/1200px-Denver_Nuggets.svg.png",
+                "logo": "https://logos-world.net/wp-content/uploads/2020/05/Denver-Nuggets-Logo-2019-Present.png",
                 "shortName": "DEN",
                 "allStar": "0",
                 "nbaFranchise": "1",
@@ -271,7 +286,8 @@ export const _divisions = [
                         "confName": "West",
                         "divName": "Northwest"
                     }
-                }
+                },
+                "color": "0e2240"
             },
             {
                 "city": "Minnesota",
@@ -287,7 +303,8 @@ export const _divisions = [
                         "confName": "West",
                         "divName": "Northwest"
                     }
-                }
+                },
+                "color": "0c2340"
             },
             {
                 "city": "Oklahoma City",
@@ -303,7 +320,8 @@ export const _divisions = [
                         "confName": "West",
                         "divName": "Northwest"
                     }
-                }
+                },
+                "color": "007ac1"
             },
             {
                 "city": "Portland",
@@ -319,7 +337,8 @@ export const _divisions = [
                         "confName": "West",
                         "divName": "Northwest"
                     }
-                }
+                },
+                "color": "e03a3e"
             },
             {
                 "city": "Utah",
@@ -335,7 +354,8 @@ export const _divisions = [
                         "confName": "West",
                         "divName": "Northwest"
                     }
-                }
+                },
+                "color": "002b5c"
             }
         ]
     },
@@ -356,14 +376,15 @@ export const _divisions = [
                         "confName": "West",
                         "divName": "Pacific"
                     }
-                }
+                },
+                "color": "006bb6"
             },
             {
                 "city": "LA",
                 "fullName": "LA Clippers",
                 "teamId": "16",
                 "nickname": "Clippers",
-                "logo": "https://logos-download.com/wp-content/uploads/2016/04/LA_Clippers_logo_logotype_emblem.png",
+                "logo": "https://cdn.freebiesupply.com/images/large/2x/los-angeles-clippers-logo-transparent.png",
                 "shortName": "LAC",
                 "allStar": "0",
                 "nbaFranchise": "1",
@@ -372,7 +393,8 @@ export const _divisions = [
                         "confName": "West",
                         "divName": "Pacific"
                     }
-                }
+                },
+                "color": "c8102e"
             },
             {
                 "city": "Los Angeles",
@@ -388,7 +410,8 @@ export const _divisions = [
                         "confName": "West",
                         "divName": "Pacific"
                     }
-                }
+                },
+                "color": "552583"
             },
             {
                 "city": "Phoenix",
@@ -404,7 +427,8 @@ export const _divisions = [
                         "confName": "West",
                         "divName": "Pacific"
                     }
-                }
+                },
+                "color": "1d1160"
             },
             {
                 "city": "Sacramento",
@@ -420,7 +444,8 @@ export const _divisions = [
                         "confName": "West",
                         "divName": "Pacific"
                     }
-                }
+                },
+                "color": "5a2d81"
             }
         ]
     },
@@ -441,14 +466,15 @@ export const _divisions = [
                         "confName": "West",
                         "divName": "Southwest"
                     }
-                }
+                },
+                "color": "0053bc"
             },
             {
                 "city": "Houston",
                 "fullName": "Houston Rockets",
                 "teamId": "14",
                 "nickname": "Rockets",
-                "logo": "https://upload.wikimedia.org/wikipedia/en/thumb/2/28/Houston_Rockets.svg/1200px-Houston_Rockets.svg.png",
+                "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Houston-Rockets-logo.png/1200px-Houston-Rockets-logo.png",
                 "shortName": "HOU",
                 "allStar": "0",
                 "nbaFranchise": "1",
@@ -457,7 +483,8 @@ export const _divisions = [
                         "confName": "West",
                         "divName": "Southwest"
                     }
-                }
+                },
+                "color": "ce1141"
             },
             {
                 "city": "Memphis",
@@ -473,7 +500,8 @@ export const _divisions = [
                         "confName": "West",
                         "divName": "Southwest"
                     }
-                }
+                },
+                "color": "5d76a9"
             },
             {
                 "city": "New Orleans",
@@ -489,7 +517,8 @@ export const _divisions = [
                         "confName": "West",
                         "divName": "Southwest"
                     }
-                }
+                },
+                "color": "002b5c"
             },
             {
                 "city": "San Antonio",
@@ -505,7 +534,8 @@ export const _divisions = [
                         "confName": "West",
                         "divName": "Southwest"
                     }
-                }
+                },
+                "color": "000000"
             }
         ]
     }
@@ -535,5 +565,24 @@ export const _staff = [
         "list": [
             "Example team arena"
         ]
+    }
+]
+
+export const _additional = [
+    {
+        "name": "Arena",
+        "list": ["Example team arena"]
+    },
+    {
+        "name": "Location",
+        "list": ["Example location"]
+    },
+    {
+        "name": "Mascot",
+        "list": ["Example mascot"]
+    },
+    {
+        "name": "Championships",
+        "list": ["1967", "1989"]
     }
 ]

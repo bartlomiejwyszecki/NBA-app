@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Team } from 'src/app/models/divisions-model';
+import { Standing } from 'src/app/models/standing';
+import { TeamsService } from 'src/app/services/teams/api.service';
 import { _divisions } from './../data/data';
 
 @Component({
@@ -10,8 +12,9 @@ import { _divisions } from './../data/data';
 })
 export class TeamStatsComponent implements OnInit {
   team!: Team;
+  standing!: Standing<string>;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private http: TeamsService) { }
 
   ngOnInit() {
     const param = this.route.snapshot.params.id;
@@ -20,5 +23,9 @@ export class TeamStatsComponent implements OnInit {
     if (team !== undefined) {
       this.team = team;
     }
+
+    this.http.getTeamStanding(param).subscribe(standing => {
+      this.standing = standing.api.standings[0];
+    });
   }
 }

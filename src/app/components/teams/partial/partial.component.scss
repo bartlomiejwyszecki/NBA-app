@@ -1,4 +1,6 @@
 $dark: #131313;
+$darker-grey: #696969;
+
 @mixin flex {
     display: flex;
     flex-wrap: wrap;
@@ -11,18 +13,17 @@ h1 {
 }
 .background {
     font-family: 'Source Sans Pro', sans-serif;
-    height: 330px;
+    height: auto;
     width: 100%;
     position: relative;
-    background: $dark;
     color: #ffffff;
+    font-size: clamp(0.9em, 1.1vw, 1.1em);
     .bg {
         position: absolute;
         z-index: 0;
         overflow: hidden;
         width: 80%;
         margin-left: 10%;
-        height: 330px;
         background-position: left center;
         background-repeat: no-repeat;
         opacity: 0.06;
@@ -34,7 +35,7 @@ h1 {
         .logo {
             text-align: center;
             img {
-                width: 110px;
+                width: 15vh;
                 height: auto;
             }
         }
@@ -65,6 +66,7 @@ h1 {
             @include flex;
             justify-content: center;
             text-align: center;
+            padding: 5px;
             h4 { 
                 text-transform: uppercase;
                 font-size: 0.95em;
@@ -76,6 +78,7 @@ h1 {
             .conf {
                 border-right: 1px solid rgba(255, 255, 255, .4);
             }
+            .conf, .div { padding-top: 5px; }
         }
     }
 }
@@ -91,15 +94,15 @@ h1 {
         a {
             text-decoration: none;
             cursor: pointer;
-            color: $dark;
+            color: $darker-grey;
             margin-left: 30px;
             padding: 10px 10px 10px 10px;
             height: 100%;
             font-size: 0.95em;
-            font-weight: 400;
+            font-weight: 700;
         }
         .active, a:hover {
-            font-weight: 700;
+            color: $dark;
             border-bottom: 5px solid $dark;
             transform: 1s;
         }
@@ -107,26 +110,48 @@ h1 {
 }
 
 @media only screen and (min-width: 992px) {
-    .background .bg {
-        background-size: 40%;
+    .background {
+        height: 35vh;
+        .bg {
+            height: 35vh;
+            background-size: 40%;
+        }
     }
 }
 @media only screen and (min-width: 576px) and (max-width: 991px) {
-    .background .bg {
-        background-size: 60%;
+    .background {
+        height: 45vh;
+        .bg {
+            background-size: 60%;
+            height: 45vh;
+        }
     }
 }
 @media only screen and (max-width: 576px) {
     .background {
         overflow: hidden;
+        height: 50vh;
         .bg {
         background-size: 100%;
+        height: 50vh;
         }
     }
 }
 @media only screen and (max-width: 768px) {
     .background {
         text-align: center;
+        .container {
+            .description {
+                .rank {
+                    font-size: 0.9em;
+                    .conf, .div {
+                        h3 {
+                            font-size: 1.4em;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 

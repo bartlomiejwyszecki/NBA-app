@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Staff, Team } from 'src/app/models/divisions-model';
 import { TeamsService } from 'src/app/services/teams/api.service';
-import { _divisions, _staff } from './../data/data';
+import { _additional, _divisions, _staff } from './../data/data';
 
 @Component({
   selector: 'app-team-profile',
@@ -13,6 +13,7 @@ export class TeamProfileComponent implements OnInit {
   team!: Team;
   players!: any[];
   staff: Staff[] = _staff;
+  additional: Staff[] = _additional;
 
   constructor(private route: ActivatedRoute, private http: TeamsService) { }
 
@@ -26,7 +27,6 @@ export class TeamProfileComponent implements OnInit {
 
     this.http.getNbaPlayers().subscribe(players => {
       this.players = players.api.players.filter((player: any) => player.teamId == param && player.startNba > 0);
-      console.log(this.players);
     });
   }
 }

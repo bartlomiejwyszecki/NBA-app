@@ -33,17 +33,34 @@
             <h4>Loading...</h4>
         </div>
     </div>
-    <div class="staff">
-        <div class="info">
-            <h3>Staff & additional info</h3>
-        </div>
-        <div class="row infoContent" *ngFor="let STAFF of staff">
-            <div class="col-sm-6 col-md-4 col-lg-3 left">
-                <h6>{{ STAFF.name }}</h6>
+    <div class="lowerTable">
+        <div class="staff">
+            <div class="info">
+                <h3>Staff</h3>
             </div>
-            <div class="col-sm-6 col-md-8 col-lg-9 right">
-                <div class="rightSide">
-                    <h6 *ngFor="let element of STAFF.list">{{ element }}</h6>
+            <div class="row infoContent" *ngFor="let STAFF of staff">
+                <div class="col-sm-6 col-md-4 col-lg-3 left">
+                    <h6>{{ STAFF.name }}</h6>
+                </div>
+                <div class="col-sm-6 col-md-8 col-lg-9 right">
+                    <div class="rightSide">
+                        <h6 *ngFor="let element of STAFF.list">{{ element }}</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="staff">
+            <div class="info">
+                <h3>Additional info</h3>
+            </div>
+            <div class="row infoContent" *ngFor="let ad of additional">
+                <div class="col-sm-6 col-md-4 col-lg-3 left">
+                    <h6>{{ ad.name }}</h6>
+                </div>
+                <div class="col-sm-6 col-md-8 col-lg-9 right">
+                    <div class="rightSide">
+                        <h6 *ngFor="let element of ad.list">{{ element }}</h6>
+                    </div>
                 </div>
             </div>
         </div>

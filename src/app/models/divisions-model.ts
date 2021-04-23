@@ -12,7 +12,8 @@ export interface Team {
   nbaFranchise: string,
   nickname: string,
   shortName: string,
-  teamId: string
+  teamId: string,
+  color: string
 }
 
 export interface Division {

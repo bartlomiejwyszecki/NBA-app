@@ -1,4 +1,4 @@
-<div class="background">
+<div class="background" [ngStyle]="{'background': '#' + team.color}">
     <div class="bg" [ngStyle]="{'background-image': 'url(' + team.logo + ')'}"></div> 
     <div class="container" style="height: 100%;">
         <div class="row description" style="height: 100%;">
@@ -20,7 +20,7 @@
                             <div class="bilans">
                                 <span>{{ standing.win }} - {{ standing.loss }}</span>
                                 <span>|</span>
-                                <span>{{ standing.conference.rank }}{{ standing.conference.rank | numeral }} in {{ team.leagues.standard.confName }}</span>
+                                <span>{{ standing.conference.rank }}{{ standing.conference.rank | numeral }} in {{ team.leagues.standard.confName }} Conference</span>
                             </div>
                         </div>
                     </div>
@@ -36,7 +36,7 @@
                             <div class="col-6 conf">
                                 <div class="row">
                                     <div class="col-12">
-                                        <h4>conf</h4>
+                                        <h4>Conference</h4>
                                     </div>
                                     <div class="col-12">
                                         <h3>{{ standing.conference.rank }}{{ standing.conference.rank | numeral }}</h3>
@@ -46,7 +46,7 @@
                             <div class="col-6 div">
                                 <div class="row">
                                     <div class="col-12">
-                                        <h4>div</h4>
+                                        <h4>Division</h4>
                                     </div>
                                     <div class="col-12">
                                         <h3>{{ standing.division.rank }}{{ standing.division.rank | numeral }}</h3>
