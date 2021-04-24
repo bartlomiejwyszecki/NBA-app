@@ -92,6 +92,16 @@ nav:hover {
             padding: 3vw 0 3vw 0;
         }
     }
+    .bg {
+        position: absolute;
+        display: none;
+        z-index: -1;
+        width: 100vw;
+        height: 100vh;
+        background: #051c2d;
+        left: 0;
+        top: 55px;
+    }
     .active {
         .hamburger {
             .line:first-child {
@@ -115,10 +125,20 @@ nav:hover {
                 animation-fill-mode: both;
             }
         }
+        .bg {
+            display: block;
+            animation: halfFade 0.75s 1;
+            animation-fill-mode: both;
+        } 
     }
 }
 
 @keyframes fade {
     0% { opacity: 0; }
     100% { opacity: 1; }
+}
+
+@keyframes halfFade {
+    from { opacity: 0; }
+    to { opacity: 0.4; }
 }

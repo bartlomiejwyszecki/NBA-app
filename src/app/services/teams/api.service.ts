@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -34,7 +35,7 @@ export class TeamsService {
         "x-rapidapi-key": "7c6dc4e545mshbaaf72020470cdfp19ffa1jsn82e089938c32",
 	      "x-rapidapi-host": "api-nba-v1.p.rapidapi.com"
       }
-    })
+    });
   }
 
   getPlayersByTeam(teamId: number) {

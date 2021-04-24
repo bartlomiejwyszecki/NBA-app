@@ -20,5 +20,4 @@ export class PartialComponent implements OnInit {
       this.standing = standing.api.standings[0];
     });
   }
-
 }
