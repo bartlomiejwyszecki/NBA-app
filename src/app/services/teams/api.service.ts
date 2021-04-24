@@ -1,22 +1,21 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
+
+import { _URL, _HEADERS } from './url';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TeamsService {
-  private readonly url: string = 'https://api-nba-v1.p.rapidapi.com';
+  url: string = _URL;
+  headers = _HEADERS;
 
   constructor(private http: HttpClient) { }
 
   getTeams(): Observable<any> {
     return this.http.get<any>(`${this.url}/teams/league/standard`, {
-      headers: {
-        "x-rapidapi-key": "7c6dc4e545mshbaaf72020470cdfp19ffa1jsn82e089938c32",
-        "x-rapidapi-host": "api-nba-v1.p.rapidapi.com"
-      }
+      headers: this.headers
     });
   }
 
