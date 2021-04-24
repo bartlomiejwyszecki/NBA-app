@@ -10,10 +10,13 @@
         </div>
         <div class="navitems">
             <div class="navitem">
-                <a href="#" routerLink="/home">Home</a>
+                <a href="#" routerLink="/home" (click)="toggler = !toggler">Home</a>
             </div>
             <div class="navitem">
-                <a href="#" routerLink="/teams">Teams</a>
+                <a href="#" routerLink="/teams" (click)="toggler = !toggler">Teams</a>
+            </div>
+            <div class="navitem">
+                <a href="#" routerLink="/players" (click)="toggler = !toggler">Players</a>
             </div>
         </div>
         <div class="bg"></div>
