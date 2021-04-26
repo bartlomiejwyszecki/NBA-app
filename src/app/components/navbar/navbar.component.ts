@@ -8,6 +8,10 @@ import { Component, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit {
   toggler: boolean = false;
 
+  list: string[] = [
+    'home', 'teams', 'players'
+  ];
+
   constructor() { }
 
   ngOnInit(): void {

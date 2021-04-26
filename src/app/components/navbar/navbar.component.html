@@ -9,14 +9,8 @@
             <img src="assets/nba-logo.png" alt="Nba logo" >
         </div>
         <div class="navitems">
-            <div class="navitem">
-                <a href="#" routerLink="/home" (click)="toggler = !toggler">Home</a>
-            </div>
-            <div class="navitem">
-                <a href="#" routerLink="/teams" (click)="toggler = !toggler">Teams</a>
-            </div>
-            <div class="navitem">
-                <a href="#" routerLink="/players" (click)="toggler = !toggler">Players</a>
+            <div class="navitem" *ngFor="let element of list">
+                <a href="#" routerLink="/{{ element }}" (click)="toggler = !toggler">{{ element |titlecase }}</a>
             </div>
         </div>
         <div class="bg"></div>

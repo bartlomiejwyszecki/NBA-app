@@ -42,7 +42,7 @@ nav {
             }
         } 
         .navitems {
-            font-size: 1.1em;
+            font-size: 1.2em;
             font-weight: 500;
             .navitem {
                 margin: 1vw;
@@ -140,5 +140,5 @@ nav:hover {
 
 @keyframes halfFade {
     from { opacity: 0; }
-    to { opacity: 0.4; }
+    to { opacity: 0.6; }
 }

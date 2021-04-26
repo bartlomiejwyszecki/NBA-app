@@ -8,8 +8,7 @@ $darker-grey: #696969;
 }
 h1 {
     font-weight: 600;
-    font-size: 2em;
-    letter-spacing: -2px;
+    font-size: 1.9em;
 }
 .background {
     font-family: 'Source Sans Pro', sans-serif;
@@ -17,7 +16,7 @@ h1 {
     width: 100%;
     position: relative;
     color: #ffffff;
-    font-size: clamp(0.9em, 1.1vw, 1.1em);
+    font-size: clamp(1.1em, 1.3vw, 1.3em);
     .bg {
         position: absolute;
         z-index: 0;
@@ -42,7 +41,7 @@ h1 {
         .loading {
             color: #fafafa;
             text-align: center;
-            font-size: 0.8em;
+            font-size: 1em;
             animation: 2.5s loading infinite linear;
         }
         .name {
@@ -59,7 +58,7 @@ h1 {
             color: #ffffff;
             border: 1px solid #ffffff;
             font-size: 0.9em;
-            padding: 3px 40px 3px 40px;
+            padding: 6px 40px 6px 40px;
             i { padding-right: 5px; }
         }
         .rank {
@@ -69,11 +68,12 @@ h1 {
             padding: 5px;
             h4 { 
                 text-transform: uppercase;
-                font-size: 0.95em;
-                font-weight: 500;
+                font-size: 0.9em;
+                font-weight: 300;
             }
             h3 {
                 font-weight: 800;
+                font-size: 1.4em;
             }
             .conf {
                 border-right: 1px solid rgba(255, 255, 255, .4);
@@ -98,7 +98,7 @@ h1 {
             margin-left: 30px;
             padding: 10px 10px 10px 10px;
             height: 100%;
-            font-size: 0.95em;
+            font-size: 1.1em;
             font-weight: 700;
         }
         .active, a:hover {
@@ -143,7 +143,7 @@ h1 {
         .container {
             .description {
                 .rank {
-                    font-size: 0.9em;
+                    font-size: 1em;
                     .conf, .div {
                         h3 {
                             font-size: 1.4em;
