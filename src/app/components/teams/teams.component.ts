@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Division } from 'src/app/models/divisions-model';
-import { _divisions } from './data/data';
+import { _divisions } from '../../data/data';
 
 @Component({
   selector: 'app-teams',

@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Team } from 'src/app/models/divisions-model';
 import { Standing } from 'src/app/models/standing';
-import { TeamsService } from 'src/app/services/teams/api.service';
+import { TeamsService } from 'src/app/services/teams/teams.service';
 
 @Component({
   selector: 'app-partial',

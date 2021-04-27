@@ -6,7 +6,7 @@ import { TeamsComponent } from './teams.component';
 import { TeamProfileComponent } from './team-profile/team-profile.component';
 import { TeamStatsComponent } from './team-stats/team-stats.component';
 import { PartialComponent } from './partial/partial.component';
-import { TeamsService } from 'src/app/services/teams/api.service';
+import { TeamsService } from 'src/app/services/teams/teams.service';
 import { PipeModule } from 'src/app/pipes/pipes.module';
 
 

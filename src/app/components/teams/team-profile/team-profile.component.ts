@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Staff, Team } from 'src/app/models/divisions-model';
-import { TeamsService } from 'src/app/services/teams/api.service';
-import { _additional, _divisions, _staff } from './../data/data';
+import { TeamsService } from 'src/app/services/teams/teams.service';
+import { _additional, _divisions, _staff } from '../../../data/data';
 
 @Component({
   selector: 'app-team-profile',

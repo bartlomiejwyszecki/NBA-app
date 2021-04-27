@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Team } from 'src/app/models/divisions-model';
 import { Standing } from 'src/app/models/standing';
-import { TeamsService } from 'src/app/services/teams/api.service';
-import { _divisions } from './../data/data';
+import { TeamsService } from 'src/app/services/teams/teams.service';
+import { _divisions } from '../../../data/data';
 
 @Component({
   selector: 'app-team-stats',

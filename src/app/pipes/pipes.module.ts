@@ -1,13 +1,16 @@
 import { NgModule } from '@angular/core';
 import { NumeralPipe } from './numeral';
+import { TeamPipe } from './whichTeam';
 
 @NgModule({
     declarations: [
-        NumeralPipe
+        NumeralPipe,
+        TeamPipe
     ],
     imports: [],
     exports: [
-        NumeralPipe
+        NumeralPipe,
+        TeamPipe
     ]
 })
 export class PipeModule { }

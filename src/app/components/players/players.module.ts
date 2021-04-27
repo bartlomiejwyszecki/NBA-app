@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 
 import { PlayersComponent } from './players.component';
 import { AngularMaterialModule } from 'src/app/angular-material.module';
+import { PipeModule } from 'src/app/pipes/pipes.module';
+import { PlayersService } from 'src/app/services/players/players.service';
 
 const routes: Routes = [
   { path: '', component: PlayersComponent }
@@ -16,8 +18,10 @@ const routes: Routes = [
   imports: [ 
     CommonModule,
     RouterModule.forChild(routes),
-    AngularMaterialModule
+    AngularMaterialModule,
+    PipeModule
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  providers: [PlayersService]
 })
 export class PlayersModule { }

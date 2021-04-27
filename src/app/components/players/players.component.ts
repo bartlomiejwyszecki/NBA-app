@@ -1,6 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { PlayersService } from 'src/app/services/players/players.service';
+import { _actualTeams } from '../../data/data';
 import { Player } from './../../models/players';
 
 @Component({
@@ -9,277 +12,27 @@ import { Player } from './../../models/players';
   styleUrls: ['./players.component.scss']
 })
 export class PlayersComponent implements OnInit {
-  displayedColumns: string[] = ['firstName', 'lastName', 'playerId'];
-  dataSource = new MatTableDataSource<Partial<Player<string>>>(ELEMENT_DATA);
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  players!: Player<string>[];
 
-  constructor() { }
+  displayedColumns: string[] = ['name', 'teamId', 'number', 'position', 'heightInMeters', 'weightInKilograms', 'country'];
+  dataSource = new MatTableDataSource();
+
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
+
+  constructor(private http: PlayersService) { }
 
   ngOnInit(): void {
-    setTimeout(() => this.dataSource.paginator = this.paginator);
+    this.http.getPlayers().subscribe(players => {
+      this.dataSource.data = players.api.players.filter((player: any) => player.teamId > 0 
+      && _actualTeams.includes(player.teamId)
+      && player.leagues.standard.active != 0
+      && parseInt(player.startNba) >= 1999
+      && player.heightInMeters > 0
+      && player.weightInKilograms > 0
+      && player.country !== ' ');
+      setTimeout(() => this.dataSource.paginator = this.paginator);
+      setTimeout(() => this.dataSource.sort = this.sort);
+    })
   }
-
 }
-
-const ELEMENT_DATA: Partial<Player<string>>[] = [
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  },
-  {
-    "firstName": "Example",
-    "lastName": "Example last",
-    "playerId": "2"
-  }
-];
