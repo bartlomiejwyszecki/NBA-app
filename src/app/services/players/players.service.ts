@@ -18,4 +18,14 @@ export class PlayersService {
       headers: this.headers
     });
   }
+
+  getPlayer(playerId: string): Observable<any> {
+    return this.http.get<any>(`${this.url}/players/playerId/${playerId}`, {
+      headers: this.headers
+    });
+  }
+
+  getPlayersBDL(lastName: string): Observable<any> {
+    return this.http.get<any>(`https://www.balldontlie.io/api/v1/players?per_page=100&search=${lastName}`);
+  }
 }
