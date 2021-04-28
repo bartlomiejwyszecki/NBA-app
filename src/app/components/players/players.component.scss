@@ -19,7 +19,7 @@ $medium-grey: #d1d1d1;
         font-weight: 700;
     }
     .table {
-        box-shadow: 0px 0px 15px -8px #757575;
+        box-shadow: 1px 0px 15px -8px #757575;
         background: #ffffff;
         border-radius: 5px;
         padding: 0px 20px 10px 20px;
@@ -65,7 +65,24 @@ $medium-grey: #d1d1d1;
                 padding-right: 30px;
             }
         }
+        .waiter {
+            h4 {
+                width: 100%;
+                text-align: center;
+                padding-top: 30px;
+                font-size: 1.2em;
+                font-weight: 800;
+                color: #bdbdbd;
+                animation: 2s waiting infinite;
+            }
+        }
     }
+}
+
+@keyframes waiting {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
 }
 
 @media only screen and (max-width: 580px) {
