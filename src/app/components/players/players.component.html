@@ -4,6 +4,11 @@
             <div class="header">
                 <h3>Players</h3>
             </div>
+            <div class="search">
+                <mat-form-field>
+                  <input matInput type="text" (keyup)="searchFor($any($event.target).value)" placeholder="Search">
+                </mat-form-field>
+            </div>
             <div class="paginator">
                 <mat-paginator #MatPaginator1 [pageSizeOptions]="[20, 30, 50]" showFirstLastButtons></mat-paginator>
             </div>
@@ -48,10 +53,6 @@
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table>
-
-        <div class="paginator">
-            <mat-paginator #MatPaginator2 [pageSizeOptions]="[20, 30, 50]" showFirstLastButtons></mat-paginator>
-        </div>
     </div>
 </div>
 

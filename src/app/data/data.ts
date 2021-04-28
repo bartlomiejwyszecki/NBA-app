@@ -114,7 +114,7 @@ export const _divisions = [
                 "fullName": "Cleveland Cavaliers",
                 "teamId": "7",
                 "nickname": "Cavaliers",
-                "logo": "https://lh3.googleusercontent.com/proxy/PwcrGrHViiuepSkeyj0X7tA-S1KBRfgxG9_4bWwNEAsa5gHDIlqFLN9BuPlcpb2vVF5J9Er3MURhW3a0aKWxMkFE6QeeET9WWeUkIfdE7bsMTIdbohFofZQRptmOlJ8mOHc",
+                "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Cleveland_Cavaliers_secondary_logo.svg/1186px-Cleveland_Cavaliers_secondary_logo.svg.png",
                 "shortName": "CLE",
                 "allStar": "0",
                 "nbaFranchise": "1",
