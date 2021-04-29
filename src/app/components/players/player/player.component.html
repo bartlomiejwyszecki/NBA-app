@@ -1,1 +1,59 @@
-<p>player works!</p>
+<div class="container">
+    <div class="table">
+        <div class="info">
+            <h3><span *ngIf="player">{{ player.firstName }} {{ player.lastName }} stats</span>
+                <span *ngIf="!player">Player stats</span></h3>
+        </div>
+        <ng-container *ngIf="stats && player">
+            <table>
+                <thead>
+                    <tr class="upper">
+                        <th>Season</th>
+                        <th title="Position">Pos</th>
+                        <th title="Games Played">G</th>
+                        <th title="3-Point Field Goals Per Game">3p</th>
+                        <th title="3-Point Field Goal Attempts Per Game">3pa</th>
+                        <th title="3-Point Field Goal Percentage">3p%</th>
+                        <th title="Free Throws Per Game">ft</th>
+                        <th title="Free Throw Attempts Per Game">fta</th>
+                        <th title="Free Throw Percentage">ft%</th>
+                        <th title="Offensive Rebounds Per Game">orb</th>
+                        <th title="Defensive Rebounds Per Game">drb</th>
+                        <th title="Total Rebounds Per Game">trb</th>
+                        <th title="Assists Per Game">AST</th>
+                        <th title="Blocks Per Game">blk</th>
+                        <th title="Steals Per Game">stl</th>
+                        <th title="Turnovers Per Game">tov</th>
+                        <th title="Personal Fouls Per Game">pf</th>
+                        <th title="Points Per Game">pts</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ stats.season }}-{{ stats.season + 1 }}</td>
+                        <td>{{ player.leagues.standard.pos }}</td>
+                        <td>{{ stats.games_played }}</td>
+                        <td>{{ stats.fg3m }}</td>
+                        <td>{{ stats.fg3a }}</td>
+                        <td>{{ stats.fg3_pct }}</td>
+                        <td>{{ stats.ftm }}</td>
+                        <td>{{ stats.fta }}</td>
+                        <td>{{ stats.ft_pct }}</td>
+                        <td>{{ stats.oreb }}</td>
+                        <td>{{ stats.dreb }}</td>
+                        <td>{{ stats.reb }}</td>
+                        <td>{{ stats.ast }}</td>
+                        <td>{{ stats.blk }}</td>
+                        <td>{{ stats.stl }}</td>
+                        <td>{{ stats.turnover }}</td>
+                        <td>{{ stats.pf }}</td>
+                        <td>{{ stats.pts }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </ng-container>
+        <div class="waiter"  *ngIf="!stats || !player">
+            <h4>Loading...</h4>
+        </div>
+    </div>
+</div>
