@@ -26,6 +26,10 @@ export class PlayersService {
   }
 
   getPlayersBDL(lastName: string): Observable<any> {
-    return this.http.get<any>(`https://www.balldontlie.io/api/v1/players?per_page=100&search=${lastName}`);
+      return this.http.get<any>(`https://www.balldontlie.io/api/v1/players?per_page=100&search=${lastName}`);
+  }
+
+  getPlayerBDLStats(season: number, id: number): Observable<any> {
+      return this.http.get<any>(`https://www.balldontlie.io/api/v1/season_averages?season=${season}&player_ids[]=${id}`);
   }
 }
