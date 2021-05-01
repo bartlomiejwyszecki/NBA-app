@@ -11,6 +11,7 @@ import { PlayersService } from 'src/app/services/players/players.service';
 export class PlayerComponent implements OnInit {
   stats: any;
   player!: Player<string>;
+  isPlayer: boolean = false;
 
   constructor(private route: ActivatedRoute, private http: PlayersService) { }
 
@@ -24,9 +25,10 @@ export class PlayerComponent implements OnInit {
       let PLAYER = player.api.players[0]
       this.player = player.api.players[0]
 
-      this.http.getPlayersBDL(PLAYER.lastName).subscribe(players => {
+      this.http.getPlayersBDL(PLAYER.lastName).subscribe(
+        players => {
           let newApiPlayerID = players.data.find((item: any) =>  item.first_name === PLAYER.firstName && 
-            item.last_name === PLAYER.lastName).id
+          item.last_name === PLAYER.lastName).id
 
           if (month >= 0 && month < 10) {
             season = year - 1
@@ -35,14 +37,16 @@ export class PlayerComponent implements OnInit {
           }
 
           this.http.getPlayerBDLStats(season, newApiPlayerID).subscribe(res => {
-            if (res.data) {
+            if (res.data.length > 0) {
               this.stats = res.data[0]
             } else {
-              console.log('There is no data for this season and this player.')
+              this.isPlayer = true;
             }
-          })
+          },
+          error => console.log(error))
       })
-    })
+    },
+    error => console.log(error))
   }
 
 }

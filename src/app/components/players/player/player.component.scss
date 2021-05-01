@@ -69,16 +69,16 @@ $darker-grey: #696969;
             }
         }
     }
-    .waiter {
-        h4 {
-            width: 100%;
-            text-align: center;
-            padding-top: 30px;
-            font-size: 1.2em;
-            font-weight: 800;
-            color: #bdbdbd;
-            animation: 2s waiting infinite;
-        }
+    h4 {
+        width: 100%;
+        text-align: center;
+        padding-top: 30px;
+        font-size: 1.2em;
+        font-weight: 800;
+        color: #bdbdbd;
+    }
+    .waiter h4 {
+        animation: 2s waiting infinite;
     }
 }
 
