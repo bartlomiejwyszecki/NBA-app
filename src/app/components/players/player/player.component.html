@@ -55,7 +55,7 @@
         <div class="waiter"  *ngIf="!stats && !isPlayer || !player && !isPlayer">
             <h4>Loading...</h4>
         </div>
-        <div class="noData"  *ngIf="isPlayer">
+        <div *ngIf="isPlayer">
             <h4>Unfortunately there is no data for this player.</h4>
         </div>
     </div>

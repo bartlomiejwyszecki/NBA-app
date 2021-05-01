@@ -61,6 +61,7 @@ $light-grey: #e0e0e0;
             font-weight: 500;
             td {
                 @include padding;
+                a { text-decoration: none; }
             }
         }
     }

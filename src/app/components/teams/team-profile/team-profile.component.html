@@ -19,7 +19,7 @@
             </thead>
             <tbody>
                 <tr *ngFor="let player of players">
-                    <td>{{ player.firstName }} {{ player.lastName }}</td>
+                    <td><a [routerLink]="['/players/player', player.playerId]">{{ player.firstName }} {{ player.lastName }}</a></td>
                     <td>{{ player.leagues.standard.jersey }}</td>
                     <td>{{ player.leagues.standard.pos }}</td>
                     <td>{{ player.heightInMeters }}</td>
