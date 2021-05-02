@@ -9,7 +9,7 @@ export class NavbarComponent implements OnInit {
   toggler: boolean = false;
 
   list: string[] = [
-    'home', 'teams', 'players'
+    'home', 'teams', 'players', 'rank'
   ];
 
   constructor() { }
