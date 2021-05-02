@@ -270,7 +270,7 @@ export const _divisions = [
         ]
     },
     {
-        "name": "nortwest",
+        "name": "northwest",
         "teams": [
             {
                 "city": "Denver",
