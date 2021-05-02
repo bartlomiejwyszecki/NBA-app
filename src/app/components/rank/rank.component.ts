@@ -31,9 +31,6 @@ export class RankComponent implements OnInit {
         for (let i in this.eastStandings) {
           this.east.push(teams.find((team: any) => team.teamId === this.eastStandings[i].teamId));
         }
-
-        console.log(this.eastStandings);
-        console.log(this.east);
       }
     )
 
