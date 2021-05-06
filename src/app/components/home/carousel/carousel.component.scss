@@ -1,0 +1,110 @@
+@mixin progress {
+    width: 15vw;
+    height: 7px;
+    border-radius: 7px;
+}
+@mixin animation {
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+
+.carousel {
+    width: 100%;
+    height: calc(100vh - 55px);
+    overflow-x: hidden;
+    .slides {
+        width: 100%;
+        height: 100%;
+        background: black;
+        .slide {
+            height: 100%;
+            .upperSlide {
+                background: black;
+                height: 80%;
+                position: relative;
+                .image {
+                    height: 100%;
+                    overflow: hidden;
+                    .bg {
+                        position: relative;
+                        z-index: 1;
+                        width: 100%;
+                        height: 100%;
+                        background-image: url('https://www.gannett-cdn.com/presto/2019/08/12/USAT/ecebbf02-7aff-49df-bcc2-e4e780b88fdf-GTY_1150199611.JPG'), linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 1) 100%);
+                    }
+                    .gradient {
+                        position: relative;
+                        overflow: hidden;
+                        width: 100%;
+                        height: 100%;
+                    }
+                    .gradient::before {
+                        content: "";
+                        position: absolute;
+                        z-index: 10;
+                        top: 0px;
+                        right: 0px;
+                        left: 0px;
+                        bottom: 0px;
+                        background: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.5) 20%, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0.9) 100%);
+                    }
+                }
+            }
+            .bottomSlide {
+                .progressBar {
+                    @include progress;
+                    background: #9e9e9e;
+                    overflow: hidden;
+                    position: relative;
+                }
+                .progressBar::after {
+                    @include progress;
+                    content: "";
+                    position: absolute;
+                    transform: scaleX(1);
+                    background: white;
+                }
+            }
+        }
+        .active {
+            .bottomSlide {
+                color: #fafafa;
+                .progressBar::after {
+                    animation: progressBar 7s 1;
+                    @include animation;
+                    transform-origin: left;
+                }
+            }
+            .upperSlide {
+                .image {
+                    .bg {
+                        background-size: cover;
+                        animation: image 7s 1;
+                        @include animation;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes progressBar {
+    0% { transform: scaleX(0); }
+    100% { transform: scaleX(1); }
+}
+@keyframes image {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.15); }
+}
+
+@media only screen and (min-width: 772px) {
+    .slide .small {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 771px) {
+    .slide .medium {
+        display: none;
+    }
+}
