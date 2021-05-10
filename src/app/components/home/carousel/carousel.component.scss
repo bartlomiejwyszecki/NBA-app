@@ -41,6 +41,7 @@
                 text-shadow: 2px 2px black;
                 padding: 0;
                 margin: 0;
+                display: none;
                 .image {
                     height: 75vh;
                     overflow: hidden;
@@ -49,7 +50,6 @@
                         @include fullWidthAndHeight;
                         z-index: 0;
                         background-size: cover;
-                        background-image: url('https://www.gannett-cdn.com/presto/2019/08/12/USAT/ecebbf02-7aff-49df-bcc2-e4e780b88fdf-GTY_1150199611.JPG'), linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 1) 100%);
                     }
                     .gradient {
                         @include relativeHidden;
@@ -93,10 +93,14 @@
                 }
             }
             .upperSlide.active {
+                display: flex;
                 width: 100%;
+                animation: showSlide 0.75s 1;
+                animation-fill-mode: both;
                 .image {
                     .bg {
-                        animation: image 7s 1;
+                        animation: image 6s 1;
+                        animation-delay: 1s;
                         @include animation;
                     }
                 }
@@ -149,6 +153,10 @@
 @keyframes image {
     0% { transform: scale(1); }
     100% { transform: scale(1.15); }
+}
+@keyframes showSlide {
+    0% { transform: translateX(100vw); }
+    100% { transform: translateX(0vw); }
 }
 
 @media only screen and (min-width: 772px) {

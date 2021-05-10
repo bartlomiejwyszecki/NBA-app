@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
+import { data } from './data/data';
 
 @Component({
   selector: 'app-carousel',
@@ -7,37 +8,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarouselComponent implements OnInit {
 
-  constructor() { }
+  data = data;
+
+  constructor(private elem: ElementRef, private renderer: Renderer2) { }
 
   ngOnInit(): void {
+    setTimeout(() => {
+      this.runSlider();
+    }, 0);
   }
+ 
+  runSlider() {
+    const elements = this.elem.nativeElement.querySelectorAll('.bottom');
+    const currentUpperElement = this.elem.nativeElement.querySelectorAll('.upperSlide');
+    let int = 0;
 
-  data = [
-    {
-      header: "Curry drains 11 3-pointers, scores 49 in Warriors' victory",
-      description: "Steph Curry lights up the Thunder for 49 points in 29 minutes and regains the lead for the scoring title while fans serenade him with chants of “MVP! MVP!”",
-      img: "https://www.gannett-cdn.com/presto/2019/08/12/USAT/ecebbf02-7aff-49df-bcc2-e4e780b88fdf-GTY_1150199611.JPG"
-    },
-    {
-      header: "Curry drains 11 3-pointers, scores 49 in Warriors' victory",
-      description: "Steph Curry lights up the Thunder for 49 points in 29 minutes and regains the lead for the scoring title while fans serenade him with chants of “MVP! MVP!”",
-      img: "https://www.gannett-cdn.com/presto/2019/08/12/USAT/ecebbf02-7aff-49df-bcc2-e4e780b88fdf-GTY_1150199611.JPG"
-    },
-    {
-      header: "Curry drains 11 3-pointers, scores 49 in Warriors' victory",
-      description: "Steph Curry lights up the Thunder for 49 points in 29 minutes and regains the lead for the scoring title while fans serenade him with chants of “MVP! MVP!”",
-      img: "https://www.gannett-cdn.com/presto/2019/08/12/USAT/ecebbf02-7aff-49df-bcc2-e4e780b88fdf-GTY_1150199611.JPG"
-    },
-    {
-      header: "Curry drains 11 3-pointers, scores 49 in Warriors' victory",
-      description: "Steph Curry lights up the Thunder for 49 points in 29 minutes and regains the lead for the scoring title while fans serenade him with chants of “MVP! MVP!”",
-      img: "https://www.gannett-cdn.com/presto/2019/08/12/USAT/ecebbf02-7aff-49df-bcc2-e4e780b88fdf-GTY_1150199611.JPG"
-    },
-    {
-      header: "Curry drains 11 3-pointers, scores 49 in Warriors' victory",
-      description: "Steph Curry lights up the Thunder for 49 points in 29 minutes and regains the lead for the scoring title while fans serenade him with chants of “MVP! MVP!”",
-      img: "https://www.gannett-cdn.com/presto/2019/08/12/USAT/ecebbf02-7aff-49df-bcc2-e4e780b88fdf-GTY_1150199611.JPG"
+    let switchSlide = () => {
+      this.renderer.addClass(elements[int], 'active');
+      this.renderer.addClass(currentUpperElement[int], 'active');
+      setInterval(() => {
+        this.renderer.removeClass(elements[int], 'active');
+        this.renderer.removeClass(currentUpperElement[int], 'active');
+        int === elements.length - 1 ? int = 0 : int++;
+        this.renderer.addClass(elements[int], 'active');
+        this.renderer.addClass(currentUpperElement[int], 'active');
+      }, 8000);
     }
-  ]
+
+    switchSlide();
+  }
 
 }

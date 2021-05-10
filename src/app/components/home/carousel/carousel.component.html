@@ -1,64 +1,40 @@
 <div class="carousel">
     <div class="container">
         <div class="slides">
-            <div class="slide active">
-                <div class="row upperSlide active">
+            <div class="slide">
+                <div class="row upperSlide" *ngFor="let element of data">
                     <div class="col-12 col-md-4 leftSide medium">
                         <div class="header">
-                            <h1>Curry drains 11 3-pointers, scores 49 in Warriors' victory</h1>
+                            <h1>{{ element.header }}</h1>
                         </div>
                         <div class="description">
-                            <p>Steph Curry lights up the Thunder for 49 points in 29 minutes and regains the lead for the scoring title while fans serenade him with chants of “MVP! MVP!”</p>
+                            <p>{{ element.description }}</p>
                         </div>
                         <div class="buttons">
                             <button>watch</button>
-                            <button>box score</button>
+                            <button *ngIf="element.postGame === true">box score</button>
                         </div>
                     </div>
                     <div class="col-12 col-md-8 image">
                         <div class="gradient">
-                            <div class="bg"></div>
+                            <div class="bg" [ngStyle]="{'background-image': 'url(' + element.img + ')'}"></div>
                         </div>
                     </div>
                     <div class="col-12 col-md-4 leftSide small">
                         <div class="header">
-                            <h1>Curry drains 11 3-pointers, scores 49 in Warriors' victory</h1>
+                            <h1>{{ element.header }}</h1>
                         </div>
                         <div class="buttons">
                             <button>watch</button>
-                            <button>box score</button>
+                            <button *ngIf="element.postGame === true">box score</button>
                         </div>
                     </div>
                 </div>
                 <div class="row bottomSlide">
-                    <div class="bottom active">
+                    <div class="bottom" *ngFor="let element of data">
                         <div class="progressBar"></div>
                         <div class="header">
-                            <h2>{{ data[0].header }}</h2>
-                        </div>
-                    </div>
-                    <div class="bottom">
-                        <div class="progressBar"></div>
-                        <div class="header">
-                            <h2>{{ data[0].header }}</h2>
-                        </div>
-                    </div>
-                    <div class="bottom active">
-                        <div class="progressBar"></div>
-                        <div class="header">
-                            <h2>{{ data[0].header }}</h2>
-                        </div>
-                    </div>
-                    <div class="bottom active">
-                        <div class="progressBar"></div>
-                        <div class="header">
-                            <h2>{{ data[0].header }}</h2>
-                        </div>
-                    </div>
-                    <div class="bottom active">
-                        <div class="progressBar"></div>
-                        <div class="header">
-                            <h2>{{ data[0].header }}</h2>
+                            <h2>{{ element.header }}</h2>
                         </div>
                     </div>
                 </div>
