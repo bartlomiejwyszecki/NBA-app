@@ -1,42 +1,59 @@
 @mixin progress {
-    width: 15vw;
-    height: 7px;
+    width: 100%;
+    height: 5px;
     border-radius: 7px;
 }
 @mixin animation {
     animation-fill-mode: forwards;
     animation-timing-function: linear;
 }
+@mixin flex {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+}
+@mixin relativeHidden {
+    position: relative;
+    overflow: hidden;
+}
+@mixin fullWidthAndHeight {
+    width: 100%;
+    height: 100%;
+}
+@mixin relativeIndex {
+    position: relative;
+    z-index: 11;
+}
 
 .carousel {
     width: 100%;
-    height: calc(100vh - 55px);
+    height: auto;
     overflow-x: hidden;
+    background: black;
     .slides {
-        width: 100%;
-        height: 100%;
-        background: black;
+        @include fullWidthAndHeight;
         .slide {
-            height: 100%;
+            overflow: hidden;
             .upperSlide {
                 background: black;
-                height: 80%;
-                position: relative;
+                @include relativeHidden;
+                text-shadow: 2px 2px black;
+                padding: 0;
+                margin: 0;
                 .image {
-                    height: 100%;
+                    height: 75vh;
                     overflow: hidden;
                     .bg {
-                        position: relative;
-                        z-index: 1;
-                        width: 100%;
-                        height: 100%;
+                        @include relativeHidden;
+                        @include fullWidthAndHeight;
+                        z-index: 0;
+                        background-size: cover;
                         background-image: url('https://www.gannett-cdn.com/presto/2019/08/12/USAT/ecebbf02-7aff-49df-bcc2-e4e780b88fdf-GTY_1150199611.JPG'), linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 20%, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 0, 1) 100%);
                     }
                     .gradient {
-                        position: relative;
-                        overflow: hidden;
-                        width: 100%;
-                        height: 100%;
+                        @include relativeHidden;
+                        @include fullWidthAndHeight;
                     }
                     .gradient::before {
                         content: "";
@@ -46,41 +63,78 @@
                         right: 0px;
                         left: 0px;
                         bottom: 0px;
-                        background: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.5) 20%, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, 0.9) 100%);
+                    }
+                }
+                .leftSide {
+                    color: #ffffff;
+                    .header {
+                        @include relativeIndex;
+                        h1 {
+                            font-weight: 700;
+                            letter-spacing: 0.5px;
+                        }
+                    }
+                    .description {
+                        @include relativeIndex;
+                    }
+                    .buttons {
+                        button {
+                            background: transparent;
+                            text-transform: uppercase;
+                            padding: 10px 20px 10px 20px;
+                            border-radius: 50px;
+                            font-weight: 600;
+                            letter-spacing: 1px;
+                            color: #ffffff;
+                            border: 2px solid #ffffff;
+                            margin-right: 25px;
+                        }
+                    }
+                }
+            }
+            .upperSlide.active {
+                width: 100%;
+                .image {
+                    .bg {
+                        animation: image 7s 1;
+                        @include animation;
                     }
                 }
             }
             .bottomSlide {
-                .progressBar {
-                    @include progress;
-                    background: #9e9e9e;
-                    overflow: hidden;
-                    position: relative;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+                padding: 30px 15px 30px 15px;
+                .bottom {
+                    color: rgba(255, 255, 255, 0.2);
+                    width: 20%;
+                    .progressBar {
+                        @include progress;
+                        @include relativeHidden;
+                        background: rgba(255, 255, 255, 0.2);
+                    }
+                    .progressBar::after {
+                        @include progress;
+                        content: "";
+                        position: absolute;
+                        transform: scaleX(0);
+                        background: white;
+                    }
+                    .header {
+                        h2 {
+                            padding-top: 10px;
+                            font-size: 1.15em;
+                            line-height: 21px;
+                        }
+                    }
                 }
-                .progressBar::after {
-                    @include progress;
-                    content: "";
-                    position: absolute;
-                    transform: scaleX(1);
-                    background: white;
-                }
-            }
-        }
-        .active {
-            .bottomSlide {
-                color: #fafafa;
-                .progressBar::after {
-                    animation: progressBar 7s 1;
-                    @include animation;
-                    transform-origin: left;
-                }
-            }
-            .upperSlide {
-                .image {
-                    .bg {
-                        background-size: cover;
-                        animation: image 7s 1;
+                .bottom.active {
+                    color: #fafafa;
+                    .progressBar::after {
+                        animation: progressBar 7s 1;
                         @include animation;
+                        transform-origin: left;
                     }
                 }
             }
@@ -98,13 +152,48 @@
 }
 
 @media only screen and (min-width: 772px) {
-    .slide .small {
-        display: none;
+    .upperSlide {
+        .leftSide {
+            padding: 10px 0px 15px 25px;
+            .header, .description {
+                width: 125%;
+            }
+            .description, .buttons {
+                padding-top: 2.5vh;
+            }
+        }
+        .small {
+            display: none;
+        }
+        .medium {
+            @include flex;
+        }
+    }
+    .upperSlide .gradient::before {
+        box-shadow: inset 0 0 80px 80px black;
     }
 }
 
 @media only screen and (max-width: 771px) {
-    .slide .medium {
-        display: none;
+        .leftSide {
+            width: 100%;
+            padding: 15px 5px 0px 15px;
+        }
+        .image {
+            width: 100%;
+            .gradient::before {
+                box-shadow: inset 0 0 35px 30px black;
+            }
+        }
+        .medium {
+            display: none;
+        }
+        .small {
+            @include flex;
+        }
+    .bottomSlide {
+        .header h2 {
+            display: none;
+        }
     }
 }
