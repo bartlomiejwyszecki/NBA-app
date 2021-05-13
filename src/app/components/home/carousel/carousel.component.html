@@ -31,10 +31,10 @@
                     </div>
                 </div>
                 <div class="row bottomSlide">
-                    <div class="bottom" *ngFor="let element of data">
+                    <div class="bottom" *ngFor="let element of data; let i = index;">
                         <div class="progressBar"></div>
                         <div class="header">
-                            <h2>{{ element.header }}</h2>
+                            <h2><a>{{ element.header }}</a></h2>
                         </div>
                     </div>
                 </div>

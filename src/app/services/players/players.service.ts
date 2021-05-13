@@ -11,6 +11,8 @@ export class PlayersService {
   url: string = _URL;
   headers = _HEADERS;
 
+  players = [];
+
   constructor(private http: HttpClient) { }
 
   getPlayers(): Observable<any> {

@@ -9,6 +9,7 @@ import { data } from './data/data';
 export class CarouselComponent implements OnInit {
 
   data = data;
+  stop!: boolean;
 
   constructor(private elem: ElementRef, private renderer: Renderer2) { }
 
@@ -23,19 +24,20 @@ export class CarouselComponent implements OnInit {
     const currentUpperElement = this.elem.nativeElement.querySelectorAll('.upperSlide');
     let int = 0;
 
+    let interval = setInterval(() => {
+      this.renderer.removeClass(elements[int], 'active');
+      this.renderer.removeClass(currentUpperElement[int], 'active');
+      int === elements.length - 1 ? int = 0 : int++;
+      this.renderer.addClass(elements[int], 'active');
+      this.renderer.addClass(currentUpperElement[int], 'active');
+    }, 8000);
+
     let switchSlide = () => {
       this.renderer.addClass(elements[int], 'active');
       this.renderer.addClass(currentUpperElement[int], 'active');
-      setInterval(() => {
-        this.renderer.removeClass(elements[int], 'active');
-        this.renderer.removeClass(currentUpperElement[int], 'active');
-        int === elements.length - 1 ? int = 0 : int++;
-        this.renderer.addClass(elements[int], 'active');
-        this.renderer.addClass(currentUpperElement[int], 'active');
-      }, 8000);
+      interval;
     }
 
     switchSlide();
   }
-
 }
