@@ -2,7 +2,9 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 
 import { _URL, _HEADERS } from '../url';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
+import { shareReplay, tap } from 'rxjs/operators';
+import { Player } from 'src/app/models/players';
 
 @Injectable({
   providedIn: 'root'
@@ -11,14 +13,19 @@ export class PlayersService {
   url: string = _URL;
   headers = _HEADERS;
 
-  players = [];
+  players!: any[];
 
   constructor(private http: HttpClient) { }
 
   getPlayers(): Observable<any> {
+    if (this.players) {
+      return of(this.players);
+    }
     return this.http.get<any>(`${this.url}/players/league/standard`, {
       headers: this.headers
-    });
+    }).pipe(
+      tap(res => this.players = res)
+    );
   }
 
   getPlayer(playerId: string): Observable<any> {

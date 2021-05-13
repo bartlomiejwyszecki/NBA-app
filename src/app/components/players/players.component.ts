@@ -31,7 +31,6 @@ export class PlayersComponent implements OnInit {
       && player.heightInMeters > 0
       && player.weightInKilograms > 0
       && player.country !== ' ');
-      console.log(this.dataSource.data);
 
       setTimeout(() => this.dataSource.paginator = this.paginator);
       setTimeout(() => this.dataSource.sort = this.sort);
