@@ -1,12 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
+import { TeamsResolverService } from './services/teams/teams.resolver';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'teams',
-      loadChildren: () => import('./components/teams/teams.module').then(m => m.TeamsModule) 
+      loadChildren: () => import('./components/teams/teams.module').then(m => m.TeamsModule),
+      resolve: {
+        teams: TeamsResolverService
+      }
   },
   {
     path: 'players', 

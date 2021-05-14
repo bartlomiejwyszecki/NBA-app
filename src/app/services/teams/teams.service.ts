@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http'
 
 import { _URL, _HEADERS } from '../url';
 import { Observable, of } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { _divisions } from './../../data/data';
 
 @Injectable({
   providedIn: 'root'
@@ -11,26 +11,11 @@ import { tap } from 'rxjs/operators';
 export class TeamsService {
   url: string = _URL;
   headers = _HEADERS;
-
-  teams!: any[];
   
   constructor(private http: HttpClient) { }
 
-  getTeams(): Observable<any> {
-    if (this.teams) {
-      return of(this.teams);
-    }
-    return this.http.get<any>(`${this.url}/teams/league/standard`, {
-      headers: this.headers
-    }).pipe(
-      tap(res => this.teams = res)
-    );
-  }
-
-  getTeam(id: number): Observable<any> {
-    return this.http.get<any>(`${this.url}/teams/teamId/${id}`, {
-      headers: this.headers
-    });
+  getTeams() {
+    return of(_divisions);
   }
 
   getNbaPlayers(): Observable<any> {

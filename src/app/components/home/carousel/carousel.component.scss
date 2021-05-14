@@ -50,6 +50,7 @@
                         @include fullWidthAndHeight;
                         z-index: 0;
                         background-size: cover;
+                        background-position: center;
                     }
                     .gradient {
                         @include relativeHidden;
