@@ -55,10 +55,6 @@
             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
         </table>
-
-        <div class="waiter" *ngIf="!loaded">
-            <h4>Loading...</h4>
-        </div>
     </div>
 </div>
 

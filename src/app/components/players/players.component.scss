@@ -36,8 +36,6 @@ $medium-grey: #d1d1d1;
             }
             .search {
                 width: 50%;
-                .mat-form-field {
-                }
             }
             .mat-paginator {
                 padding: 0px;
@@ -64,17 +62,6 @@ $medium-grey: #d1d1d1;
             td, th {
                 padding-right: 30px;
                 a { text-decoration: none; }
-            }
-        }
-        .waiter {
-            h4 {
-                width: 100%;
-                text-align: center;
-                padding-top: 30px;
-                font-size: 1.2em;
-                font-weight: 800;
-                color: #bdbdbd;
-                animation: 2s waiting infinite;
             }
         }
     }

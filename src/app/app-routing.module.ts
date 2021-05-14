@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
+import { PlayersResolverService } from './services/players/players.resolver';
 import { TeamsResolverService } from './services/teams/teams.resolver';
 
 const routes: Routes = [
@@ -14,7 +15,10 @@ const routes: Routes = [
   },
   {
     path: 'players', 
-      loadChildren: () => import('./components/players/players.module').then(m => m.PlayersModule)
+      loadChildren: () => import('./components/players/players.module').then(m => m.PlayersModule),
+      resolve: {
+        players: PlayersResolverService
+      }
   },
   {
     path: 'rank',

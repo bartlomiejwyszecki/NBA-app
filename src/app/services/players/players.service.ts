@@ -3,8 +3,7 @@ import { HttpClient } from '@angular/common/http'
 
 import { _URL, _HEADERS } from '../url';
 import { Observable, of } from 'rxjs';
-import { shareReplay, tap } from 'rxjs/operators';
-import { Player } from 'src/app/models/players';
+import { tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'

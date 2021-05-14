@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { ActivatedRoute } from '@angular/router';
 import { PlayersService } from 'src/app/services/players/players.service';
 import { _actualTeams } from '../../data/data';
 import { Player } from './../../models/players';
@@ -20,22 +21,22 @@ export class PlayersComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
-  constructor(private http: PlayersService) { }
+  constructor(private http: PlayersService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.http.getPlayers().subscribe(players => {
-      this.dataSource.data = players.api.players.filter((player: any) => player.teamId > 0 
-      && _actualTeams.includes(player.teamId)
-      && player.leagues.standard.active != 0
-      && parseInt(player.startNba) >= 1999
-      && player.heightInMeters > 0
-      && player.weightInKilograms > 0
-      && player.country !== ' ');
-
-      setTimeout(() => this.dataSource.paginator = this.paginator);
-      setTimeout(() => this.dataSource.sort = this.sort);
-
-      this.loaded = true;
+    this.activatedRoute.data.subscribe((data: any) => {
+      this.dataSource.data = data.players.api.players.filter((player: any) => player.teamId > 0 
+        && _actualTeams.includes(player.teamId)
+        && player.leagues.standard.active != 0
+        && parseInt(player.startNba) >= 1999
+        && player.heightInMeters > 0
+        && player.weightInKilograms > 0
+        && player.country !== ' ');
+  
+        setTimeout(() => this.dataSource.paginator = this.paginator);
+        setTimeout(() => this.dataSource.sort = this.sort);
+  
+        this.loaded = true;
     })
   }
 
