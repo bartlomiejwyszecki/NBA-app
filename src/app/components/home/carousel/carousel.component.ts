@@ -1,43 +1,56 @@
-import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
-import { data } from './data/data';
+import { AfterViewInit, Component, ElementRef, OnInit, QueryList, Renderer2, ViewChildren } from '@angular/core';
+import { data } from '../data/data';
 
 @Component({
   selector: 'app-carousel',
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.scss']
 })
-export class CarouselComponent implements OnInit {
+export class CarouselComponent implements OnInit, AfterViewInit {
 
   data = data;
-  stop!: boolean;
+  stopped: boolean = false;
+  interval: any;
+  int: number = 0;
+
+  @ViewChildren('upperSlide') upperSlide!: QueryList<ElementRef>;
+  @ViewChildren('bottomSlide') bottomSlide!: QueryList<ElementRef>;
 
   constructor(private elem: ElementRef, private renderer: Renderer2) { }
 
-  ngOnInit(): void {
-    setTimeout(() => {
-      this.runSlider();
-    }, 0);
-  }
- 
-  runSlider() {
-    const elements = this.elem.nativeElement.querySelectorAll('.bottom');
-    const currentUpperElement = this.elem.nativeElement.querySelectorAll('.upperSlide');
-    let int = 0;
+  ngOnInit(): void {}
 
-    let interval = setInterval(() => {
-      this.renderer.removeClass(elements[int], 'active');
-      this.renderer.removeClass(currentUpperElement[int], 'active');
-      int === elements.length - 1 ? int = 0 : int++;
-      this.renderer.addClass(elements[int], 'active');
-      this.renderer.addClass(currentUpperElement[int], 'active');
+  ngAfterViewInit() {
+    const DOMElements = [this.upperSlide, this.bottomSlide];
+
+    this.changeClass('active', DOMElements, true);
+
+    this.interval = setInterval(() => {
+      this.changeClass('active', DOMElements, false);
+      this.int === this.bottomSlide.toArray().length - 1 ? this.int = 0 : this.int++;
+      this.changeClass('active', DOMElements, true);
     }, 8000);
+  }
 
-    let switchSlide = () => {
-      this.renderer.addClass(elements[int], 'active');
-      this.renderer.addClass(currentUpperElement[int], 'active');
-      interval;
+  stopSlider(int: number) {
+    const DOMElements = [this.upperSlide, this.bottomSlide];
+
+    this.changeClass('active', DOMElements, false);
+    this.changeClass('complete', DOMElements, false);
+    this.int = int;
+    clearInterval(this.interval);
+    this.changeClass('complete', DOMElements, true);
+  }
+
+  changeClass(elClass: string, elements:QueryList<ElementRef>[], change: boolean): void {
+    if (change === true) {
+      elements.forEach((el) => {
+        this.renderer.addClass(el.toArray()[this.int].nativeElement, elClass);
+      })
+    } else {
+      elements.forEach((el) => {
+        this.renderer.removeClass(el.toArray()[this.int].nativeElement, elClass);
+      })
     }
-
-    switchSlide();
   }
 }

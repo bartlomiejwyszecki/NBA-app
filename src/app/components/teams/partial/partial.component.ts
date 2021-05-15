@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
 import { Team } from 'src/app/models/divisions-model';
 import { Standing } from 'src/app/models/standing';
 import { TeamsService } from 'src/app/services/teams/teams.service';
@@ -6,7 +6,8 @@ import { TeamsService } from 'src/app/services/teams/teams.service';
 @Component({
   selector: 'app-partial',
   templateUrl: './partial.component.html',
-  styleUrls: ['./partial.component.scss']
+  styleUrls: ['./partial.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class PartialComponent implements OnInit {
   @Input() team!: Team;

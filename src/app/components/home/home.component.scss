@@ -1,0 +1,64 @@
+.container {
+    padding: 10vh 0 10vh 0;
+    .hof {
+        background: #ffffff;
+        padding: 20px;
+        box-shadow: 0px 0px 15px -8px #757575;
+        h2 {
+            text-transform: uppercase;
+            font-size: 1.2em;
+            font-weight: 600;
+            border-bottom: 1px solid #dddddd;
+        }
+        .articles {
+            .main {
+                padding: 10px;
+                .img {
+                    width: 100%; 
+                    padding-top: 70%;
+                    border-radius: 5px;
+                    background-size: cover;
+                    background-position: center;
+                }
+                .text {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                    padding: 10px 0 10px 0;
+                    .header, .description {
+                        width: 100%;
+                    }
+                    .header {
+                        h1 {
+                            font-weight: 700;
+                        }
+                    }
+                }
+            }
+            .other {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                .article {
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .article:last-child, .article:nth-child(2) {
+        border-top: 1px solid #dddddd;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .article {
+        border-top: 1px solid #dddddd;
+        padding: 1px;
+    }
+    .article:last-child {
+        border-bottom: 1px solid #dddddd;
+    }
+}
