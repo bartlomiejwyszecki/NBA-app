@@ -3,7 +3,7 @@
         <div class="slides">
             <div class="slide">
                 <div class="row upperSlide" *ngFor="let element of data" #upperSlide>
-                    <div class="col-12 col-md-4 leftSide medium">
+                    <div class="col-12 col-md-3 leftSide medium">
                         <div class="header">
                             <h1>{{ element.header }}</h1>
                         </div>
@@ -15,7 +15,7 @@
                             <button *ngIf="element.postGame === true">box score</button>
                         </div>
                     </div>
-                    <div class="col-12 col-md-8 image">
+                    <div class="col-12 col-md-9 image">
                         <div class="gradient">
                             <div class="bg" [ngStyle]="{'background-image': 'url(' + element.img + ')'}"></div>
                         </div>
@@ -32,7 +32,7 @@
                 </div>
                 <div class="row bottomSlide">
                     <div class="bottom" *ngFor="let element of data; let i = index;" #bottomSlide>
-                        <div class="progressBar"></div>
+                        <div class="progressBar" (click)="stopSlider(i)"></div>
                         <div class="header">
                             <h2><a (click)="stopSlider(i)">{{ element.header }}</a></h2>
                         </div>

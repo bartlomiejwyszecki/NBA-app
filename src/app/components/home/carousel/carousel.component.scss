@@ -38,8 +38,8 @@
             .upperSlide {
                 background: black;
                 @include relativeHidden;
-                text-shadow: 2px 2px black;
-                padding: 0;
+                text-shadow: 1px 1px black;
+                padding: 15px 0 0 0;
                 margin: 0;
                 display: none;
                 .image {
@@ -78,9 +78,12 @@
                         @include relativeIndex;
                     }
                     .buttons {
+                        position: relative;
+                        z-index: 200;
                         button {
                             background: transparent;
                             text-transform: uppercase;
+                            text-shadow: 1px 1px black;
                             padding: 10px 20px 10px 20px;
                             border-radius: 50px;
                             font-weight: 600;
@@ -118,6 +121,7 @@
                     color: rgba(255, 255, 255, 0.2);
                     width: 20%;
                     .progressBar {
+                        cursor: pointer;
                         @include progress;
                         @include relativeHidden;
                         background: rgba(255, 255, 255, 0.2);
@@ -130,6 +134,7 @@
                         background: white;
                     }
                     .header {
+                        cursor: pointer;
                         h2 {
                             padding-top: 10px;
                             font-size: 1.15em;
@@ -174,7 +179,7 @@
         .leftSide {
             padding: 10px 0px 15px 25px;
             .header, .description {
-                width: 130%;
+                width: 150%;
             }
             .description, .buttons {
                 padding-top: 2.5vh;
@@ -188,7 +193,7 @@
         }
     }
     .upperSlide .gradient::before {
-        box-shadow: inset 0 0 80px 80px black;
+        box-shadow: inset 0 0 40px 50px black;
     }
 }
 
