@@ -42,22 +42,23 @@
                 .article {
                     height: 100%;
                 }
-                .article:last-child, .article:nth-child(2) {
-                    border-top: 1px solid #dddddd;
-                }
             }
         }
     }
 }
 
 @media only screen and (min-width: 768px) {
-    .content {
-        padding: 10px;
+    .article:last-child, .article:nth-child(2) {
+        border-top: 1px solid #dddddd;
     }
 }
 
 @media only screen and (max-width: 767px) {
-    .content {
-        padding: 0;
+    .article {
+        border-top: 1px solid #dddddd;
+        padding: 1px;
+    }
+    .article:last-child {
+        border-bottom: 1px solid #dddddd;
     }
 }
