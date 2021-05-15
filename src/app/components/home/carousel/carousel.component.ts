@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, OnInit, QueryList, Renderer2, ViewChildren } from '@angular/core';
-import { data } from './data/data';
+import { data } from '../data/data';
 
 @Component({
   selector: 'app-carousel',
