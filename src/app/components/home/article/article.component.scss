@@ -7,6 +7,7 @@
         background-size: cover;
         background-position: center;
         border-radius: 5px;
+        filter: brightness(70%);
     }
     .text {
         padding-left: 0;
@@ -21,6 +22,15 @@
             font-size: 1.2em;
             font-weight: 700;
         }
+    }
+}
+.content:hover {
+    .header {
+        text-decoration: underline;
+    }
+    .img {
+        transition: 1.5s;
+        filter: brightness(100%);
     }
 }
 
