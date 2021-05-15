@@ -10,51 +10,53 @@
                     <h1>Loading <i class="bi bi-hourglass-split"></i></h1>
                 </div>
             </ng-container>
-            <div class="col-sm-12 col-md-3 col-lg-3" *ngIf="standing">
-                <div class="row name">
-                    <div class="col-12">
-                        <h1>{{ team.fullName }}</h1>
-                    </div>
-                    <div class="col-12">
-                        <div class="bilans">
-                            <span>{{ standing.win }} - {{ standing.loss }}</span>
-                            <span>|</span>
-                            <span>{{ standing.conference.rank }}{{ standing.conference.rank | numeral }} in {{ team.leagues.standard.confName }} Conference</span>
+            <ng-container *ngIf="standing.away">
+                <div class="col-sm-12 col-md-3 col-lg-3" *ngIf="standing">
+                    <div class="row name">
+                        <div class="col-12">
+                            <h1>{{ team.fullName }}</h1>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-3 col-lg-3">
-                <div class="col-12 button">
-                    <button><i class="bi bi-star"></i> FAVORITE</button>
-                </div>
-            </div>
-            <div class="col-sm-12 col-md-3 col-lg-4">
-                <div class="rank">
-                    <div class="row">
-                        <div class="col-6 conf">
-                            <div class="row">
-                                <div class="col-12">
-                                    <h4>Conf</h4>
-                                </div>
-                                <div class="col-12">
-                                    <h3>{{ standing.conference.rank }}{{ standing.conference.rank | numeral }}</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-6 div">
-                            <div class="row">
-                                <div class="col-12">
-                                    <h4>Div</h4>
-                                </div>
-                                <div class="col-12">
-                                    <h3>{{ standing.division.rank }}{{ standing.division.rank | numeral }}</h3>
-                                </div>
+                        <div class="col-12">
+                            <div class="bilans">
+                                <span>{{ standing.win }} - {{ standing.loss }}</span>
+                                <span>|</span>
+                                <span>{{ standing.conference.rank }}{{ standing.conference.rank | numeral }} in {{ team.leagues.standard.confName }} Conference</span>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+                <div class="col-sm-12 col-md-3 col-lg-3">
+                    <div class="col-12 button">
+                        <button><i class="bi bi-star"></i> FAVORITE</button>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-3 col-lg-4">
+                    <div class="rank">
+                        <div class="row">
+                            <div class="col-6 conf">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h4>Conf</h4>
+                                    </div>
+                                    <div class="col-12">
+                                        <h3>{{ standing.conference.rank }}{{ standing.conference.rank | numeral }}</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 div">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h4>Div</h4>
+                                    </div>
+                                    <div class="col-12">
+                                        <h3>{{ standing.division.rank }}{{ standing.division.rank | numeral }}</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
         </div>
     </div>
 </div>
