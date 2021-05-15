@@ -43,7 +43,6 @@
                 margin: 0;
                 display: none;
                 .image {
-                    height: 75vh;
                     overflow: hidden;
                     .bg {
                         @include relativeHidden;
@@ -186,6 +185,9 @@
                 padding-top: 2.5vh;
             }
         }
+        .image {
+            height: 75vh;
+        }
         .small {
             display: none;
         }
@@ -205,6 +207,11 @@
         }
         .image {
             width: 100%;
+            height: 60vh;
+            .gradient {
+                margin: 0;
+                padding: 0;
+            }
             .gradient::before {
                 box-shadow: inset 0 0 35px 30px black;
             }
