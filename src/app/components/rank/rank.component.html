@@ -5,87 +5,77 @@
         </div>
         <div class="east">
             <h3>Eastern Conference</h3>
-            <ng-container *ngIf="eastStandings">
-                <table>
-                    <thead>
-                        <tr>
-                            <th colspan="3">Team</th>
-                            <th>W</th>
-                            <th>L</th>
-                            <th>win%</th>
-                            <th>gb</th>
-                            <th>conf</th>
-                            <th>div</th>
-                            <th>home</th>
-                            <th>road</th>
-                            <th>last 10</th>
-                            <th>streak</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let standing of eastStandings; let i = index;">
-                            <td>{{ i + 1 }}</td>
-                            <td><img src="{{ east[i].logo }}" ></td>
-                            <td><a [routerLink]="['/teams/team-profile', standing.teamId]">{{ east[i].fullName }}</a></td>
-                            <td>{{ standing.win }}</td>
-                            <td>{{ standing.loss }}</td>
-                            <td>{{ standing.winPercentage }}</td>
-                            <td>{{ standing.gamesBehind }}</td>
-                            <td>{{ standing.conference.win }}-{{ standing.conference.loss }}</td>
-                            <td>{{ standing.division.win }}-{{ standing.division.loss }}</td>
-                            <td>{{ standing.home.win }}-{{ standing.home.loss }}</td>
-                            <td>{{ standing.away.win }}-{{ standing.away.loss }}</td>
-                            <td>{{ standing.lastTenWin }}-{{ standing.lastTenLoss }}</td>
-                            <td>{{ standing.winStreak | streak }} {{ standing.streak }}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </ng-container>
-            <div class="waiter" *ngIf="!eastStandings">
-                <h4>Loading...</h4>
-            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="3">Team</th>
+                        <th>W</th>
+                        <th>L</th>
+                        <th>win%</th>
+                        <th>gb</th>
+                        <th>conf</th>
+                        <th>div</th>
+                        <th>home</th>
+                        <th>road</th>
+                        <th>last 10</th>
+                        <th>streak</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let standing of eastStandings; let i = index;">
+                        <td>{{ i + 1 }}</td>
+                        <td><img src="{{ east[i].logo }}" ></td>
+                        <td><a [routerLink]="['/teams/team-profile', standing.teamId]">{{ east[i].fullName }}</a></td>
+                        <td>{{ standing.win }}</td>
+                        <td>{{ standing.loss }}</td>
+                        <td>{{ standing.winPercentage }}</td>
+                        <td>{{ standing.gamesBehind }}</td>
+                        <td>{{ standing.conference.win }}-{{ standing.conference.loss }}</td>
+                        <td>{{ standing.division.win }}-{{ standing.division.loss }}</td>
+                        <td>{{ standing.home.win }}-{{ standing.home.loss }}</td>
+                        <td>{{ standing.away.win }}-{{ standing.away.loss }}</td>
+                        <td>{{ standing.lastTenWin }}-{{ standing.lastTenLoss }}</td>
+                        <td>{{ standing.winStreak | streak }} {{ standing.streak }}</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
         <div class="west" style="padding-top: 15px;">
             <h3>Western Conference</h3>
-            <ng-container *ngIf="westStandings">
-                <table>
-                    <thead>
-                        <tr>
-                            <th colspan="3">Team</th>
-                            <th>W</th>
-                            <th>L</th>
-                            <th>win%</th>
-                            <th>gb</th>
-                            <th>conf</th>
-                            <th>div</th>
-                            <th>home</th>
-                            <th>road</th>
-                            <th>last 10</th>
-                            <th>streak</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let standing of westStandings; let i = index;">
-                            <td>{{ i + 1 }}</td>
-                            <td><img src="{{ west[i].logo }}" ></td>
-                            <td><a [routerLink]="['/teams/team-profile', standing.teamId]">{{ west[i].fullName }}</a></td>
-                            <td>{{ standing.win }}</td>
-                            <td>{{ standing.loss }}</td>
-                            <td>{{ standing.winPercentage }}</td>
-                            <td>{{ standing.gamesBehind }}</td>
-                            <td>{{ standing.conference.win }}-{{ standing.conference.loss }}</td>
-                            <td>{{ standing.division.win }}-{{ standing.division.loss }}</td>
-                            <td>{{ standing.home.win }}-{{ standing.home.loss }}</td>
-                            <td>{{ standing.away.win }}-{{ standing.away.loss }}</td>
-                            <td>{{ standing.lastTenWin }}-{{ standing.lastTenLoss }}</td>
-                            <td>{{ standing.winStreak | streak }} {{ standing.streak }}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </ng-container>
-            <div class="waiter" *ngIf="!westStandings">
-                <h4>Loading...</h4>
-            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="3">Team</th>
+                        <th>W</th>
+                        <th>L</th>
+                        <th>win%</th>
+                        <th>gb</th>
+                        <th>conf</th>
+                        <th>div</th>
+                        <th>home</th>
+                        <th>road</th>
+                        <th>last 10</th>
+                        <th>streak</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let standing of westStandings; let i = index;">
+                        <td>{{ i + 1 }}</td>
+                        <td><img src="{{ west[i].logo }}" ></td>
+                        <td><a [routerLink]="['/teams/team-profile', standing.teamId]">{{ west[i].fullName }}</a></td>
+                        <td>{{ standing.win }}</td>
+                        <td>{{ standing.loss }}</td>
+                        <td>{{ standing.winPercentage }}</td>
+                        <td>{{ standing.gamesBehind }}</td>
+                        <td>{{ standing.conference.win }}-{{ standing.conference.loss }}</td>
+                        <td>{{ standing.division.win }}-{{ standing.division.loss }}</td>
+                        <td>{{ standing.home.win }}-{{ standing.home.loss }}</td>
+                        <td>{{ standing.away.win }}-{{ standing.away.loss }}</td>
+                        <td>{{ standing.lastTenWin }}-{{ standing.lastTenLoss }}</td>
+                        <td>{{ standing.winStreak | streak }} {{ standing.streak }}</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

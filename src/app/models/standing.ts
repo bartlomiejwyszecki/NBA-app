@@ -34,3 +34,8 @@ export interface Standing<T> {
     winPercentage: T,
     winStreak: T
 }
+
+export interface Standings {
+    eastStandings: Standing<string>[],
+    westStandings: Standing<string>[]
+}

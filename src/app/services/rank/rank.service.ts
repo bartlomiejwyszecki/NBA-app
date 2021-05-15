@@ -4,6 +4,8 @@ import { HttpClient } from '@angular/common/http'
 import { _URL, _HEADERS } from '../url';
 import { Observable, of } from 'rxjs';
 import { tap } from 'rxjs/operators';
+import { _divisions } from 'src/app/data/data';
+import { Team } from 'src/app/models/divisions-model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,9 +13,9 @@ import { tap } from 'rxjs/operators';
 export class RankService {
   url: string = _URL;
   headers = _HEADERS;
-
-  west!: any[];
-  east!: any[];
+  
+  east!: Team[];
+  west!: Team[];
 
   constructor(private http: HttpClient) { }
 

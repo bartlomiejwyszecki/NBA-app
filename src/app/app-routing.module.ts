@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { PlayersResolverService } from './services/players/players.resolver';
+import { RankEastResolver } from './services/rank/rank.east.resolver';
+import { RankWestResolver } from './services/rank/rank.west.resolver';
 import { TeamsResolverService } from './services/teams/teams.resolver';
 
 const routes: Routes = [
@@ -22,7 +24,11 @@ const routes: Routes = [
   },
   {
     path: 'rank',
-      loadChildren: () => import('./components/rank/rank.module').then(m => m.RankModule)
+      loadChildren: () => import('./components/rank/rank.module').then(m => m.RankModule),
+      resolve: {
+        east: RankEastResolver,
+        west: RankWestResolver
+      }
   }
 ];
 
