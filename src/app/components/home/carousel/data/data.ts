@@ -30,3 +30,26 @@ export const data = [
       postGame: true
     }
 ]
+
+export const articles = [
+  {
+    img: "/assets/dirk.jpeg",
+    header: "Is Dirk Nowitzki the NBA's most important European player ever?",
+    description: "While he hasn’t made it official, it appears the end of the road is imminent for the Dallas Mavericks’ influential talisman"
+  },
+  {
+    img: "/assets/duncan.jpeg",
+    header: "Humble, hard-working Tim Duncan followed unorthodox path to Hall of Fame",
+    description: "Tim Duncan's upbringing in St. Croix helped set the stage for one of the most successful careers in NBA history."
+  },
+  {
+    img: "/assets/garnett.jpeg",
+    header: "Excellence, unbridled passion propelled Kevin Garnett to Hall of Fame",
+    description: "Kevin Garnett's white-hot intensity and rare skill set were driving forces in his jump straight from high school to the heights of NBA success."
+  },
+  {
+    img: "/assets/bryant.jpeg",
+    header: "60 things to know about Kobe Bryant, Tim Duncan and Kevin Garnett",
+    description: "Celebrate the trio's 60 combined NBA seasons with these key numbers."
+  }
+]
