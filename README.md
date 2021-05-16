@@ -1,27 +1,72 @@
-# NbaApp
+## Table of Contents
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.4.
+* [Description](#description)
+* [Components description](#components-descripton)
+* [Technologies](#technologies)
+* [Installation](#installation)
+* [Live version](#live-version)
+* [Warnings](#warnings)
 
-## Development server
+## <a name="description"></a>Description 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Mini NBA website with real-time data provided from two API's, like: players stats, teams stats, team informations, standings, etc. Application is based on original NBA website https://www.nba.com/. API's is providing real-time data, but unfortunately regular season is up to end on May 17th, so from May to December data will practically won't be chaning. Anyway user still can read informations and stats about this or previous season (if it's currently break in the NBA). Application is composed of four lazy modules based components: Home Component, Teams Component, Players Component, Rank Component.
 
-## Code scaffolding
+![Home component dekstop](https://github.com/bartlomiejwyszecki/NBA-app/blob/master/src/assets/readme1.jpg)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Application looks as well on bigger devices as on smaller devices.
 
-## Build
+![Home component mobile](https://github.com/bartlomiejwyszecki/NBA-app/blob/master/src/assets/readme2.jpg)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## <a name="components-description"></a>Components description
 
-## Running unit tests
+* **Home Component** - Component with static information data, and carousel. Unfortunately API's I use are not providing data like news, articles, etc., so all data here comes from static data file.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+* **Teams Component** - Component that shows list of NBA teams divided by conferences, and divisions. All team element includes link to profile, and stats about this team, that are separated component in separated routing direction.
 
-## Running end-to-end tests
+![Teams component dekstop](https://github.com/bartlomiejwyszecki/NBA-app/blob/master/src/assets/readme3.jpg)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+![Teams component dekstop](https://github.com/bartlomiejwyszecki/NBA-app/blob/master/src/assets/readme4.jpg)
 
-## Further help
+* **Players Component** - Component showing list of currently active NBA players. Table of players might be sorted by property, filtered by provided text, and might be showing choosen amount of players per page. Every player has a link with direction to stats component, with statistics of this specific player from current or previous season, like: ponits, assists, blocks, steals and much more.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![Players component dekstop](https://github.com/bartlomiejwyszecki/NBA-app/blob/master/src/assets/readme5.jpg)
+
+* **Rank Component** - Component representing standings of teams in current NBA season (if it lasts actually) or previous (if it's break right now). Teams are divided by conference. Teams ranked 1-6 are clinched into play-offs, teams ranked 7-10 have to play 'play-in' tournament, which determines two winners clinched to play-offs, teams ranked 11-15 are not clinched into play-offs.
+
+![Rank component dekstop](https://github.com/bartlomiejwyszecki/NBA-app/blob/master/src/assets/readme6.jpg)
+
+Teams, Players and Rank Components are all based on Lazy Modules, REST API, and Resolvers.
+
+## <a name="technologies"></a>Technologies/tools used
+
+* Angular 11 including modules, libraries and other functionalities like: Lazy Modules, Resolvers, HttpClient, Renderer, ElementRef, Pipes, Custom Pipes, RxJs, Routing, Activated Routes,
+* Typescript 4,
+* Angular Material,
+* SCSS,
+* Bootstrap 5.
+
+
+## <a name="installation"></a>Installation
+
+1. Download zip or clone repository,
+2. Navigate to folder with downloaded application in your terminal,
+3. Write command
+```
+npm install
+```
+and then
+```
+npm start
+```
+4. Your project will be running on localhost:4200 in web browser.
+
+## <a name="live-version"></a>Live version
+
+Live version is available in link below:
+
+[Live version](https://nba-app-angular.herokuapp.com/)
+
+## <a name="warnings"></a>Warnings
+
+* Application might be running a little bit slowly sometimes because of free hosting used to deployed this project,
+* Players component might load a few seconds because of resolver, large data size provided in this component, and hosting quality.
